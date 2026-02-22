@@ -1,0 +1,52 @@
+[
+  {
+    "id": "rituel-eclat",
+    "name": "Rituel Éclat Signature",
+    "description": [
+      "Un soin complet conçu pour raviver la luminosité, affiner le grain de peau et détendre les traits.",
+      "Nettoyage profond, massage sculptant et masque cocooning pour une peau souple et homogène."
+    ],
+    "duration": "75 min",
+    "price": "À partir de 120 €"
+  },
+  {
+    "id": "dermaplaning",
+    "name": "Dermaplaning Haute Précision",
+    "description": [
+      "Exfoliation mécanique douce pour éliminer les cellules mortes et lisser la surface cutanée.",
+      "Idéal avant un événement pour un teint uniforme et lumineux."
+    ],
+    "duration": "45 min",
+    "price": "95 €"
+  },
+  {
+    "id": "lift-cils",
+    "name": "Lifting & Soin des Cils",
+    "description": [
+      "Courbure élégante, regard ouvert, nutrition intense grâce à un soin kératine.",
+      "Effet naturel et durable, sans extensions."
+    ],
+    "duration": "60 min",
+    "price": "89 €"
+  },
+  {
+    "id": "microneedling",
+    "name": "Microneedling Régénérant",
+    "description": [
+      "Stimule la production de collagène et améliore la texture de la peau.",
+      "Cible les rides, les pores et les marques superficielles."
+    ],
+    "duration": "60 min",
+    "price": "À partir de 140 €"
+  },
+  {
+    "id": "massage-sculptant",
+    "name": "Massage Sculptant Visage",
+    "description": [
+      "Manœuvres profondes inspirées du kobido pour redessiner l'ovale et relâcher les tensions.",
+      "Un moment de bien-être qui illumine instantanément le teint."
+    ],
+    "duration": "50 min",
+    "price": "110 €"
+  }
+]

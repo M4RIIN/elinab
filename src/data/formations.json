@@ -1,0 +1,48 @@
+[
+  {
+    "id": "expert-regard",
+    "name": "Expert Regard & Cils",
+    "description": "Maîtrisez les protocoles de rehaussement, teinture et soin profond pour un regard sophistiqué et naturel.",
+    "program": [
+      "Jour 1 : anatomie, diagnostic et hygiène",
+      "Jour 2 : techniques de rehaussement, mapping, application",
+      "Jour 3 : soins, retouches, conseil client et fidélisation"
+    ],
+    "price": "1 290 €",
+    "location": "Toulouse — Centre premium",
+    "format": "Présentiel, groupe de 6 max",
+    "duration": "3 jours",
+    "level": "Niveau intermédiaire"
+  },
+  {
+    "id": "skin-rituals",
+    "name": "Rituels Skin & Glow",
+    "description": "Apprenez à créer des protocoles visage sur-mesure : nettoyage profond, massage signature, masque expert.",
+    "program": [
+      "Jour 1 : analyse de peau, préparation et gestuelle",
+      "Jour 2 : massage sculptant et drainage",
+      "Jour 3 : protocole signature, protocoles cabine",
+      "Jour 4 : posture commerciale et suivi client"
+    ],
+    "price": "1 890 €",
+    "location": "Toulouse — Centre premium",
+    "format": "Présentiel, groupe de 8 max",
+    "duration": "4 jours",
+    "level": "Tous niveaux"
+  },
+  {
+    "id": "micro-aiguilles",
+    "name": "Microneedling Expert",
+    "description": "Formation technique pour pratiquer le microneedling en toute sécurité : protocoles, indications, suivi post-soin.",
+    "program": [
+      "Jour 1 : indications, contre-indications, matériel",
+      "Jour 2 : gestes techniques, profondeur, protocoles avancés",
+      "Jour 3 : suivi post-traitement, plans de cure"
+    ],
+    "price": "2 100 €",
+    "location": "Toulouse — Centre premium",
+    "format": "Présentiel, groupe de 4 max",
+    "duration": "3 jours",
+    "level": "Niveau avancé"
+  }
+]

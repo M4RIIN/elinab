@@ -1,0 +1,35 @@
+---
+import Button from './Button.astro';
+const {
+  title = "L'esthétique signée ELINA B",
+  tagline = "Des prestations précises et des formations structurées, avec une direction artistique sobre et une exigence professionnelle.",
+} = Astro.props;
+---
+<section class="relative overflow-hidden bg-ivory">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,_rgba(255,255,255,0.92),_rgba(248,248,248,0.86)_44%,_rgba(235,235,235,0.58))]"></div>
+  <div class="container-shell relative py-24 lg:py-32">
+    <div class="space-y-8">
+      <span class="text-xs font-semibold uppercase tracking-[0.38em] text-cocoa/70">ELINA B - Esthétique & formations</span>
+      <h1 class="font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
+        {title}
+      </h1>
+      <p class="max-w-xl text-base text-cocoa/80">
+        {tagline}
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <Button href="/prestations" variant="primary">Voir les prestations</Button>
+        <Button href="/formations" variant="secondary">Découvrir les formations</Button>
+      </div>
+      <div class="flex flex-wrap gap-6 text-xs uppercase tracking-[0.3em] text-cocoa/70">
+        <span class="flex items-center gap-2">
+          <span class="h-2 w-2 rounded-full bg-ink"></span>
+          Signature visuelle forte
+        </span>
+        <span class="flex items-center gap-2">
+          <span class="h-2 w-2 rounded-full bg-ink"></span>
+          Formations professionnelles
+        </span>
+      </div>
+    </div>
+  </div>
+</section>

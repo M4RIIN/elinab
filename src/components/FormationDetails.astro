@@ -1,0 +1,26 @@
+---
+const { formation } = Astro.props;
+---
+<article class="rounded-2xl border border-sand/60 bg-white/70 p-6 shadow-soft">
+  <div class="flex flex-wrap items-center justify-between gap-3 text-xs uppercase tracking-[0.3em] text-cocoa/70">
+    <span>{formation.duration}</span>
+    <span class="text-gold">{formation.price}</span>
+  </div>
+  <h3 class="mt-4 font-display text-2xl">{formation.name}</h3>
+  <p class="mt-3 text-sm text-cocoa/80">{formation.description}</p>
+  <div class="mt-5 grid gap-3 text-sm text-cocoa/80">
+    <div>
+      <p class="text-xs font-semibold uppercase tracking-[0.3em] text-cocoa/60">Programme</p>
+      <ul class="mt-3 list-disc space-y-1 pl-5">
+        {formation.program.map((module) => (
+          <li>{module}</li>
+        ))}
+      </ul>
+    </div>
+    <div class="grid gap-1 text-xs uppercase tracking-[0.3em] text-cocoa/60">
+      <span>{formation.format}</span>
+      <span>{formation.location}</span>
+      <span>{formation.level}</span>
+    </div>
+  </div>
+</article>

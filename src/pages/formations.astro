@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import FormationDetails from '../components/FormationDetails.astro';
+import CTASection from '../components/CTASection.astro';
+
+import formations from '../data/formations.json';
+---
+<BaseLayout
+  title="Formations — ELINA B - Esthétique & formations"
+  description="Formations professionnelles en beauté, cosmétique et soins."
+>
+  <section class="container-shell py-20">
+    <SectionTitle
+      eyebrow="Formations"
+      title="Former des professionnelles sûres et créatives"
+      subtitle="Des parcours intensifs, un suivi post-formation, des outils premium pour maîtriser les gestes les plus demandés."
+    />
+    <div class="mt-10 grid gap-6">
+      {formations.map((formation) => (
+        <FormationDetails formation={formation} />
+      ))}
+    </div>
+  </section>
+
+  <section class="container-shell py-20">
+    <CTASection
+      title="Demander le programme complet"
+      subtitle="Recevez le dossier pédagogique détaillé et planifiez votre session de formation."
+      primaryLabel="Demander le programme"
+      primaryHref="/contact"
+      secondaryLabel="Voir les prestations"
+      secondaryHref="/prestations"
+    />
+  </section>
+</BaseLayout>

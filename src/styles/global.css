@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ivory text-ink font-body antialiased;
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.9), rgba(248, 248, 248, 0.75) 42%),
+      linear-gradient(135deg, rgba(16, 16, 16, 0.02), rgba(16, 16, 16, 0));
+  }
+
+  ::selection {
+    @apply bg-ink/20 text-ink;
+  }
+}
+
+@layer components {
+  .container-shell {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+}

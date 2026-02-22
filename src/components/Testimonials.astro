@@ -1,0 +1,41 @@
+---
+const testimonials = [
+  {
+    name: 'Charlotte R.',
+    role: 'Cliente fidèle',
+    quote:
+      "Une atmosphère luxueuse et des résultats immédiats. Chaque soin est pensé dans le détail, on se sent accompagnée du début à la fin.",
+  },
+  {
+    name: 'Amélie P.',
+    role: 'Stagiaire',
+    quote:
+      "Formation exigeante, très structurée. J'ai gagné en confiance et en précision grâce aux protocoles enseignés.",
+  },
+  {
+    name: 'Laura D.',
+    role: 'Professionnelle beauté',
+    quote:
+      "Des formatrices disponibles, un groupe réduit, des démonstrations claires. Une vraie montée en gamme de ma pratique.",
+  },
+];
+---
+<section class="container-shell py-20">
+  <div class="flex flex-col gap-10">
+    <div class="space-y-3">
+      <span class="text-xs font-semibold uppercase tracking-[0.35em] text-cocoa/70">Avis</span>
+      <h2 class="font-display text-3xl sm:text-4xl">Elles parlent de nous</h2>
+    </div>
+    <div class="grid gap-6 md:grid-cols-3">
+      {testimonials.map((item) => (
+        <article class="rounded-2xl border border-sand/60 bg-white/70 p-6 shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-lift">
+          <p class="text-sm text-cocoa/80">“{item.quote}”</p>
+          <div class="mt-6">
+            <p class="text-sm font-semibold">{item.name}</p>
+            <p class="text-xs uppercase tracking-[0.3em] text-cocoa/60">{item.role}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,11 +1,104 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import Button from '../components/Button.astro';
+import PrestationsList from '../components/PrestationsList.astro';
+import FormationCard from '../components/FormationCard.astro';
+import CTASection from '../components/CTASection.astro';
+import Testimonials from '../components/Testimonials.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import prestations from '../data/prestations.json';
+import formations from '../data/formations.json';
+
+const prestationsPreview = prestations.slice(0, 3);
+const formationsPreview = formations.slice(0, 2);
 ---
+<BaseLayout
+  title="ELINA B - Esthétique & formations"
+  description="Prestations esthétiques premium et formations professionnelles signées ELINA B."
+>
+  <Hero />
 
-<Layout>
-	<Welcome />
-</Layout>
+  <section class="container-shell py-20">
+    <div class="grid gap-10 lg:grid-cols-[0.45fr_0.55fr]">
+      <SectionTitle
+        eyebrow="Prestations"
+        title="Rituels haut de gamme pour révéler votre éclat"
+        subtitle="Chaque prestation est conçue comme un moment exclusif : diagnostic précis, gestuelle experte et résultats visibles."
+      />
+      <div class="self-center text-sm text-cocoa/80">
+        <p>
+          Nos soins associent techniques de pointe et sensorialité raffinée. Nous privilégions des produits
+          professionnels haute tolérance et une atmosphère feutrée pour une expérience complète.
+        </p>
+        <div class="mt-6">
+          <Button href="/prestations" variant="secondary">Voir toutes les prestations</Button>
+        </div>
+      </div>
+    </div>
+    <div class="mt-10">
+      <PrestationsList items={prestationsPreview} />
+    </div>
+  </section>
+
+  <section class="container-shell py-20">
+    <div class="flex flex-col gap-10">
+      <SectionTitle
+        eyebrow="Formations"
+        title="Des formations structurées pour aller plus loin"
+        subtitle="Petits groupes, protocoles éprouvés, suivi post-formation et outils pédagogiques premium."
+      />
+      <div class="grid gap-6 md:grid-cols-2">
+        {formationsPreview.map((formation) => (
+          <FormationCard formation={formation} />
+        ))}
+      </div>
+      <div>
+        <Button href="/formations" variant="secondary">Découvrir toutes les formations</Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-shell py-20">
+    <div class="grid gap-12 lg:grid-cols-[0.5fr_0.5fr]">
+      <SectionTitle
+        eyebrow="À propos"
+        title="Excellence, précision et transmission"
+        subtitle="Une équipe passionnée, reconnue pour son exigence et sa capacité à transmettre les bons gestes."
+      />
+      <div class="space-y-6 text-sm text-cocoa/80">
+        <p>
+          Notre institut accompagne les clientes exigeantes et les professionnelles en quête d'une signature de soin
+          distinctive. Chaque protocole est testé, ajusté et enseigné pour garantir des résultats durables.
+        </p>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-2xl border border-sand/60 bg-white/70 p-5 shadow-soft">
+            <p class="text-xs uppercase tracking-[0.3em] text-cocoa/60">Engagement qualité</p>
+            <p class="mt-2 font-display text-2xl">98% de satisfaction</p>
+          </div>
+          <div class="rounded-2xl border border-sand/60 bg-white/70 p-5 shadow-soft">
+            <p class="text-xs uppercase tracking-[0.3em] text-cocoa/60">Transmission</p>
+            <p class="mt-2 font-display text-2xl">+450 stagiaires</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Testimonials />
+
+  <FAQAccordion />
+
+  <section class="container-shell py-20">
+    <CTASection
+      title="Prête à sublimer votre expertise ?"
+      subtitle="Parlez-nous de votre besoin : prestation sur-mesure, formation, planning ou devis personnalisé."
+      primaryLabel="Nous contacter"
+      primaryHref="/contact"
+      secondaryLabel="Voir les prestations"
+      secondaryHref="/prestations"
+    />
+  </section>
+</BaseLayout>

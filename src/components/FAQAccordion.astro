@@ -1,0 +1,45 @@
+---
+const faqs = [
+  {
+    question: 'Comment réserver une prestation ?',
+    answer:
+      "Vous pouvez réserver via le formulaire de contact ou par téléphone. Nous vous rappelons pour confirmer le créneau et personnaliser le soin.",
+  },
+  {
+    question: 'Les formations sont-elles certifiantes ?',
+    answer:
+      "Chaque formation inclut une attestation de fin de stage et un dossier pédagogique complet. Des blocs complémentaires peuvent être ajoutés sur demande.",
+  },
+  {
+    question: 'Quels produits utilisez-vous ?',
+    answer:
+      "Nous travaillons avec des gammes professionnelles hautement tolérées, sélectionnées pour leur efficacité et leur sensorialité.",
+  },
+];
+---
+<section class="container-shell py-20">
+  <div class="grid gap-10 lg:grid-cols-[0.4fr_0.6fr]">
+    <div class="space-y-4">
+      <span class="text-xs font-semibold uppercase tracking-[0.35em] text-cocoa/70">FAQ</span>
+      <h2 class="font-display text-3xl sm:text-4xl">Questions fréquentes</h2>
+      <p class="text-sm text-cocoa/80">
+        Nous répondons aux demandes les plus courantes. Pour toute question spécifique, contactez-nous directement.
+      </p>
+    </div>
+    <div class="space-y-4">
+      {faqs.map((faq, index) => (
+        <details class="group rounded-2xl border border-sand/60 bg-white/70 p-5 shadow-soft">
+          <summary class="flex cursor-pointer list-none items-center justify-between text-sm font-semibold">
+            {faq.question}
+            <span class="ml-4 text-gold transition group-open:rotate-45">
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12h14" />
+              </svg>
+            </span>
+          </summary>
+          <p class="mt-4 text-sm text-cocoa/80">{faq.answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,61 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="mt-24 border-t border-sand/40 bg-ivory">
+  <div class="container-shell grid gap-10 py-16 md:grid-cols-[1.3fr_1fr_1fr]">
+    <div class="space-y-4">
+      <img src="/logo.png" alt="ELINA B - Esthétique & formations" class="h-14 w-auto" />
+      <p class="text-sm text-cocoa/80">
+        ELINA B accompagne les clientes et les professionnelles avec des prestations esthétiques de précision et des
+        formations orientées pratique.
+      </p>
+      <div class="flex items-center gap-3 text-cocoa/80">
+        <a class="transition hover:text-ink" href="https://www.instagram.com" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M7 3h10a4 4 0 014 4v10a4 4 0 01-4 4H7a4 4 0 01-4-4V7a4 4 0 014-4z"
+            />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 11.37a4 4 0 11-4.63-4.63" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.5 6.5h.01" />
+          </svg>
+        </a>
+        <a class="transition hover:text-ink" href="https://www.facebook.com" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+            />
+          </svg>
+        </a>
+        <a class="transition hover:text-ink" href="https://www.linkedin.com" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2 9h4v12H2z" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="space-y-3 text-sm">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cocoa/70">Contact</p>
+      <p>contact@elina-b.fr</p>
+      <p>+33 6 12 34 56 78</p>
+      <p>3 rue des Jasmins, 31000 Toulouse</p>
+      <p>Lun–Sam : 09:00 – 19:30</p>
+    </div>
+    <div class="space-y-3 text-sm">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cocoa/70">Informations</p>
+      <a class="block transition hover:text-ink" href="/prestations">Prestations</a>
+      <a class="block transition hover:text-ink" href="/formations">Formations</a>
+      <a class="block transition hover:text-ink" href="/contact">Contact</a>
+      <a class="block transition hover:text-ink" href="#">Mentions légales</a>
+      <a class="block transition hover:text-ink" href="#">Politique de confidentialité</a>
+    </div>
+  </div>
+  <div class="border-t border-sand/40 py-6 text-center text-xs text-cocoa/70">
+    © {year} ELINA B - Esthétique & formations. Tous droits réservés.
+  </div>
+</footer>
