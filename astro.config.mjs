@@ -5,6 +5,6 @@ import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://m4riin.github.io',
-  base: '/elinab',
+  base: import.meta.env.PROD ? '/elinab' : '/',
   integrations: [tailwind()],
 });

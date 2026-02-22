@@ -1,10 +1,11 @@
 ---
 const year = new Date().getFullYear();
+const base = import.meta.env.BASE_URL;
 ---
 <footer class="mt-24 border-t border-gold/35 bg-ivory">
   <div class="container-shell grid gap-10 py-16 md:grid-cols-[1.3fr_1fr_1fr]">
     <div class="space-y-4">
-      <img src="/logo.png" alt="Elodie Mignot - Esthétique" class="h-14 w-auto" />
+      <img src={`${base}logo.png`} alt="Elodie Mignot - Esthétique" class="h-14 w-auto" />
       <p class="text-sm text-cocoa/80">
         Elodie Mignot accompagne les clientes et les professionnelles avec des prestations esthétiques de précision
         et des formations orientées pratique.

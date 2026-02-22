@@ -1,5 +1,6 @@
 ---
 const pathname = Astro.url.pathname;
+const base = import.meta.env.BASE_URL;
 const links = [
   { href: '/', label: 'Accueil' },
   { href: '/prestations', label: 'Prestations' },
@@ -11,7 +12,7 @@ const isActive = (href) => (href === '/' ? pathname === '/' : pathname.startsWit
 <header class="fixed left-0 right-0 top-0 z-50 border-b border-gold/30 bg-ivory/92 backdrop-blur-md">
   <div class="container-shell flex h-20 items-center justify-between gap-6">
     <a href="/" class="flex items-center gap-3">
-      <img src="/logo.png" alt="Elodie Mignot - Esthétique" class="h-10 w-auto sm:h-12" />
+      <img src={`${base}logo.png`} alt="Elodie Mignot - Esthétique" class="h-10 w-auto sm:h-12" />
       <span class="hidden text-[0.62rem] font-medium uppercase tracking-[0.24em] text-cocoa/80 lg:inline">
         Elodie Mignot - Beauté, cosmétique et soins
       </span>
