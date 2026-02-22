@@ -3,6 +3,12 @@ const year = new Date().getFullYear();
 const base = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
+const trimLeadingSlash = (value) => {
+  let result = value;
+  while (result.startsWith('/')) result = result.slice(1);
+  return result;
+};
+const toBaseHref = (href) => `${base}${trimLeadingSlash(href)}`;
 ---
 <footer class="mt-24 border-t border-gold/35 bg-ivory">
   <div class="container-shell grid gap-10 py-16 md:grid-cols-[1.3fr_1fr_1fr]">
@@ -51,9 +57,9 @@ const base = import.meta.env.BASE_URL.endsWith('/')
     </div>
     <div class="space-y-3 text-sm">
       <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Informations</p>
-      <a class="block transition hover:text-ink" href="/prestations">Prestations</a>
-      <a class="block transition hover:text-ink" href="/formations">Formations</a>
-      <a class="block transition hover:text-ink" href="/contact">Contact</a>
+      <a class="block transition hover:text-ink" href={toBaseHref('/prestations')}>Prestations</a>
+      <a class="block transition hover:text-ink" href={toBaseHref('/formations')}>Formations</a>
+      <a class="block transition hover:text-ink" href={toBaseHref('/contact')}>Contact</a>
       <a class="block transition hover:text-ink" href="#">Mentions légales</a>
       <a class="block transition hover:text-ink" href="#">Politique de confidentialité</a>
     </div>
