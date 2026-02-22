@@ -7,14 +7,14 @@ import CTASection from '../components/CTASection.astro';
 import formations from '../data/formations.json';
 ---
 <BaseLayout
-  title="Formations — ELINA B - Esthétique & formations"
-  description="Formations professionnelles en beauté, cosmétique et soins."
+  title="Formations — Elodie Mignot"
+  description="Formations esthétiques sérieuses, humaines et orientées vers la pratique."
 >
   <section class="container-shell py-20">
     <SectionTitle
       eyebrow="Formations"
-      title="Former des professionnelles sûres et créatives"
-      subtitle="Des parcours intensifs, un suivi post-formation, des outils premium pour maîtriser les gestes les plus demandés."
+      title="Former des professionnelles sûres et confiantes"
+      subtitle="Formations pour se perfectionner ou se reconvertir, avec une approche humaine, exigeante et tournée vers la pratique."
     />
     <div class="mt-10 grid gap-6">
       {formations.map((formation) => (
@@ -25,9 +25,9 @@ import formations from '../data/formations.json';
 
   <section class="container-shell py-20">
     <CTASection
-      title="Demander le programme complet"
-      subtitle="Recevez le dossier pédagogique détaillé et planifiez votre session de formation."
-      primaryLabel="Demander le programme"
+      title="Recevoir les informations de formation"
+      subtitle="Échangeons sur votre projet de perfectionnement ou de reconversion."
+      primaryLabel="Me contacter"
       primaryHref="/contact"
       secondaryLabel="Voir les prestations"
       secondaryHref="/prestations"

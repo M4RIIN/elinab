@@ -4,12 +4,12 @@ const alignClass = align === 'center' ? 'text-center items-center' : 'text-left 
 ---
 <div class={`flex flex-col gap-3 ${alignClass}`}>
   {eyebrow && (
-    <span class="text-xs font-semibold uppercase tracking-[0.35em] text-cocoa/70">
+    <span class="text-xs font-semibold uppercase tracking-[0.35em] text-gold">
       {eyebrow}
     </span>
   )}
   <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl">
     {title}
   </h2>
-  {subtitle && <p class="max-w-2xl text-sm text-cocoa/80">{subtitle}</p>}
+  {subtitle && <p class="max-w-2xl text-sm text-cocoa/85">{subtitle}</p>}
 </div>

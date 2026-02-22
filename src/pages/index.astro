@@ -3,7 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import SectionTitle from '../components/SectionTitle.astro';
 import Button from '../components/Button.astro';
-import PrestationsList from '../components/PrestationsList.astro';
 import FormationCard from '../components/FormationCard.astro';
 import CTASection from '../components/CTASection.astro';
 import Testimonials from '../components/Testimonials.astro';
@@ -11,13 +10,15 @@ import FAQAccordion from '../components/FAQAccordion.astro';
 
 import prestations from '../data/prestations.json';
 import formations from '../data/formations.json';
+import meImage from '../assets/me.png';
 
-const prestationsPreview = prestations.slice(0, 3);
+const prestationsPreview = prestations;
 const formationsPreview = formations.slice(0, 2);
 ---
 <BaseLayout
-  title="ELINA B - Esthétique & formations"
-  description="Prestations esthétiques premium et formations professionnelles signées ELINA B."
+  title="Elodie Mignot - Beauté, cosmétique et soins"
+  description="Esthéticienne passionnée depuis 20 ans, prestations et formations esthétiques à Saint-Orens-de-Gameville."
+  image={meImage.src}
 >
   <Hero />
 
@@ -30,8 +31,12 @@ const formationsPreview = formations.slice(0, 2);
       />
       <div class="self-center text-sm text-cocoa/80">
         <p>
-          Nos soins associent techniques de pointe et sensorialité raffinée. Nous privilégions des produits
-          professionnels haute tolérance et une atmosphère feutrée pour une expérience complète.
+          Soins du visage anti-âge spécifiques, drainage corps et dermopigmentation : chaque protocole est ciblé,
+          précis et pensé pour respecter votre identité.
+        </p>
+        <p class="mt-4">
+          Mon objectif : vous offrir l'excellence du soin, transmettre un savoir-faire de qualité et vous accompagner
+          avec bienveillance, que vous soyez cliente ou future professionnelle de l'esthétique.
         </p>
         <div class="mt-6">
           <Button href="/prestations" variant="secondary">Voir toutes les prestations</Button>
@@ -39,7 +44,46 @@ const formationsPreview = formations.slice(0, 2);
       </div>
     </div>
     <div class="mt-10">
-      <PrestationsList items={prestationsPreview} />
+      <div class="relative">
+        <div
+          id="prestations-carousel"
+          class="flex gap-6 overflow-hidden scroll-smooth py-4"
+        >
+          {prestationsPreview.map((item) => (
+            <article class="min-w-[calc(50%-0.75rem)] rounded-2xl border border-gold/35 bg-[linear-gradient(165deg,_rgba(255,255,255,0.9),_rgba(247,244,238,0.78))] p-6 shadow-soft transition duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-lift">
+              <h3 class="font-display text-2xl">{item.name}</h3>
+              <div class="mt-4 space-y-3 text-sm text-cocoa/80">
+                {item.description.map((paragraph) => (
+                  <p>{paragraph}</p>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+        <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center">
+          <button
+            id="prestations-prev"
+            class="pointer-events-auto -ml-3 inline-flex h-12 w-12 items-center justify-center rounded-full border border-gold/50 bg-ivory/90 text-ink shadow-soft transition hover:-translate-y-0.5 hover:border-gold"
+            aria-label="Voir la prestation précédente"
+          >
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 6l-6 6 6 6" />
+            </svg>
+          </button>
+        </div>
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center">
+          <button
+            id="prestations-next"
+            class="pointer-events-auto -mr-3 inline-flex h-12 w-12 items-center justify-center rounded-full border border-gold/50 bg-ivory/90 text-ink shadow-soft transition hover:-translate-y-0.5 hover:border-gold"
+            aria-label="Voir la prestation suivante"
+          >
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div id="prestations-dots" class="mt-6 flex justify-center gap-2"></div>
     </div>
   </section>
 
@@ -63,26 +107,31 @@ const formationsPreview = formations.slice(0, 2);
 
   <section class="container-shell py-20">
     <div class="grid gap-12 lg:grid-cols-[0.5fr_0.5fr]">
-      <SectionTitle
-        eyebrow="À propos"
-        title="Excellence, précision et transmission"
-        subtitle="Une équipe passionnée, reconnue pour son exigence et sa capacité à transmettre les bons gestes."
-      />
-      <div class="space-y-6 text-sm text-cocoa/80">
-        <p>
-          Notre institut accompagne les clientes exigeantes et les professionnelles en quête d'une signature de soin
-          distinctive. Chaque protocole est testé, ajusté et enseigné pour garantir des résultats durables.
-        </p>
-        <div class="grid gap-4 sm:grid-cols-2">
-          <div class="rounded-2xl border border-sand/60 bg-white/70 p-5 shadow-soft">
-            <p class="text-xs uppercase tracking-[0.3em] text-cocoa/60">Engagement qualité</p>
-            <p class="mt-2 font-display text-2xl">98% de satisfaction</p>
-          </div>
-          <div class="rounded-2xl border border-sand/60 bg-white/70 p-5 shadow-soft">
-            <p class="text-xs uppercase tracking-[0.3em] text-cocoa/60">Transmission</p>
-            <p class="mt-2 font-display text-2xl">+450 stagiaires</p>
-          </div>
+      <div class="space-y-6">
+        <SectionTitle
+          eyebrow="À propos"
+          title="Votre experte beauté à Saint-Orens-de-Gameville"
+          subtitle="Elodie Mignot, esthéticienne passionnée depuis 20 ans."
+        />
+        <div class="space-y-5 text-sm text-cocoa/80">
+          <p>
+            Forte de mon expérience, je propose des soins sur-mesure alliant expertise, précision et résultats visibles.
+            Mon approche est personnalisée et respectueuse de votre identité.
+          </p>
+          <p>
+            Mon objectif : vous offrir l'excellence du soin, transmettre un savoir-faire de qualité et vous accompagner
+            avec bienveillance, que vous soyez cliente ou future professionnelle de l'esthétique.
+          </p>
         </div>
+      </div>
+      <div class="relative">
+        <div class="absolute -left-6 top-6 h-full w-full rounded-[32px] bg-gold/10 blur-2xl"></div>
+        <img
+          src={meImage.src}
+          alt="Elodie Mignot, esthéticienne"
+          class="relative w-full max-h-[520px] rounded-[32px] border border-gold/35 object-cover shadow-soft"
+          loading="lazy"
+        />
       </div>
     </div>
   </section>
@@ -93,12 +142,117 @@ const formationsPreview = formations.slice(0, 2);
 
   <section class="container-shell py-20">
     <CTASection
-      title="Prête à sublimer votre expertise ?"
-      subtitle="Parlez-nous de votre besoin : prestation sur-mesure, formation, planning ou devis personnalisé."
-      primaryLabel="Nous contacter"
+      title="Envie d'un soin sur-mesure ou d'une formation ?"
+      subtitle="Parlez-moi de votre besoin : prestation personnalisée, perfectionnement ou reconversion."
+      primaryLabel="Me contacter"
       primaryHref="/contact"
       secondaryLabel="Voir les prestations"
       secondaryHref="/prestations"
     />
   </section>
 </BaseLayout>
+
+<script>
+  const track = document.querySelector('#prestations-carousel');
+  const dots = document.querySelector('#prestations-dots');
+  const prevBtn = document.querySelector('#prestations-prev');
+  const nextBtn = document.querySelector('#prestations-next');
+
+  if (track && dots) {
+    const gap = 24;
+    let timer = null;
+    let isPaused = false;
+
+    const getCardWidth = () => {
+      const card = track.querySelector('article');
+      return card ? card.getBoundingClientRect().width : 0;
+    };
+
+    const getMaxScroll = () => track.scrollWidth - track.clientWidth;
+
+    const getIndex = () => {
+      const amount = getCardWidth() + gap;
+      return amount ? Math.round(track.scrollLeft / amount) : 0;
+    };
+
+    const scrollToIndex = (index) => {
+      const amount = getCardWidth() + gap;
+      const maxScroll = getMaxScroll();
+      const target = Math.max(0, Math.min(index * amount, maxScroll));
+      track.scrollTo({ left: target, behavior: 'smooth' });
+    };
+
+    const getTotalPages = () => {
+      const amount = getCardWidth() + gap;
+      return amount ? Math.ceil(track.scrollWidth / amount) : 0;
+    };
+
+    const renderDots = () => {
+      const total = getTotalPages();
+      dots.innerHTML = '';
+      for (let i = 0; i < total; i += 1) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className =
+          'h-2.5 w-2.5 rounded-full border border-gold/50 transition hover:scale-110';
+        button.setAttribute('aria-label', `Aller à la prestation ${i + 1}`);
+        button.addEventListener('click', () => scrollToIndex(i));
+        dots.appendChild(button);
+      }
+      updateDots();
+    };
+
+    const updateDots = () => {
+      const index = getIndex();
+      const children = [...dots.children];
+      children.forEach((dot, i) => {
+        dot.classList.toggle('bg-gold', i === index);
+        dot.classList.toggle('bg-transparent', i !== index);
+      });
+    };
+
+    const step = (direction = 1) => {
+      const maxIndex = getTotalPages() - 1;
+      const index = getIndex();
+      const next = direction === 1 ? index + 1 : index - 1;
+      scrollToIndex(next > maxIndex ? 0 : next < 0 ? maxIndex : next);
+    };
+
+    const startAuto = () => {
+      if (timer) return;
+      timer = setInterval(() => {
+        if (!isPaused) step(1);
+      }, 3500);
+    };
+
+    const stopAuto = () => {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+    };
+
+    const onPause = () => {
+      isPaused = true;
+    };
+
+    const onResume = () => {
+      isPaused = false;
+    };
+
+    track.addEventListener('mouseenter', onPause);
+    track.addEventListener('mouseleave', onResume);
+    track.addEventListener('focusin', onPause);
+    track.addEventListener('focusout', onResume);
+    track.addEventListener('scroll', updateDots, { passive: true });
+    window.addEventListener('resize', renderDots);
+
+    prevBtn?.addEventListener('click', () => step(-1));
+    nextBtn?.addEventListener('click', () => step(1));
+
+    renderDots();
+    startAuto();
+
+    window.addEventListener('beforeunload', stopAuto);
+  }
+</script>

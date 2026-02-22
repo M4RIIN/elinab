@@ -3,7 +3,7 @@ const faqs = [
   {
     question: 'Comment réserver une prestation ?',
     answer:
-      "Vous pouvez réserver via le formulaire de contact ou par téléphone. Nous vous rappelons pour confirmer le créneau et personnaliser le soin.",
+      "Vous pouvez réserver via le formulaire de contact, par téléphone ou en DM. Je vous rappelle pour confirmer le créneau et personnaliser le soin.",
   },
   {
     question: 'Les formations sont-elles certifiantes ?',
@@ -13,22 +13,22 @@ const faqs = [
   {
     question: 'Quels produits utilisez-vous ?',
     answer:
-      "Nous travaillons avec des gammes professionnelles hautement tolérées, sélectionnées pour leur efficacité et leur sensorialité.",
+      "Je travaille avec des gammes professionnelles hautement tolérées, sélectionnées pour leur efficacité et leur sensorialité.",
   },
 ];
 ---
 <section class="container-shell py-20">
   <div class="grid gap-10 lg:grid-cols-[0.4fr_0.6fr]">
     <div class="space-y-4">
-      <span class="text-xs font-semibold uppercase tracking-[0.35em] text-cocoa/70">FAQ</span>
+      <span class="text-xs font-semibold uppercase tracking-[0.35em] text-gold">FAQ</span>
       <h2 class="font-display text-3xl sm:text-4xl">Questions fréquentes</h2>
       <p class="text-sm text-cocoa/80">
-        Nous répondons aux demandes les plus courantes. Pour toute question spécifique, contactez-nous directement.
+        Je réponds aux demandes les plus courantes. Pour toute question spécifique, contactez-moi directement.
       </p>
     </div>
     <div class="space-y-4">
       {faqs.map((faq, index) => (
-        <details class="group rounded-2xl border border-sand/60 bg-white/70 p-5 shadow-soft">
+        <details class="group rounded-2xl border border-gold/35 bg-[linear-gradient(165deg,_rgba(255,255,255,0.9),_rgba(247,244,238,0.78))] p-5 shadow-soft">
           <summary class="flex cursor-pointer list-none items-center justify-between text-sm font-semibold">
             {faq.question}
             <span class="ml-4 text-gold transition group-open:rotate-45">

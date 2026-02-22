@@ -1,48 +1,34 @@
 [
   {
-    "id": "expert-regard",
-    "name": "Expert Regard & Cils",
-    "description": "Maîtrisez les protocoles de rehaussement, teinture et soin profond pour un regard sophistiqué et naturel.",
+    "id": "perfectionnement",
+    "name": "Perfectionnement esthétique",
+    "description": "Pour les professionnelles souhaitant affiner leurs gestes, gagner en précision et développer une signature de soin.",
     "program": [
-      "Jour 1 : anatomie, diagnostic et hygiène",
-      "Jour 2 : techniques de rehaussement, mapping, application",
-      "Jour 3 : soins, retouches, conseil client et fidélisation"
+      "Diagnostic et personnalisation des protocoles",
+      "Gestuelle experte et sécurité des pratiques",
+      "Ritualisation du soin et expérience client",
+      "Conseil, suivi et fidélisation"
     ],
-    "price": "1 290 €",
-    "location": "Toulouse — Centre premium",
-    "format": "Présentiel, groupe de 6 max",
-    "duration": "3 jours",
-    "level": "Niveau intermédiaire"
-  },
-  {
-    "id": "skin-rituals",
-    "name": "Rituels Skin & Glow",
-    "description": "Apprenez à créer des protocoles visage sur-mesure : nettoyage profond, massage signature, masque expert.",
-    "program": [
-      "Jour 1 : analyse de peau, préparation et gestuelle",
-      "Jour 2 : massage sculptant et drainage",
-      "Jour 3 : protocole signature, protocoles cabine",
-      "Jour 4 : posture commerciale et suivi client"
-    ],
-    "price": "1 890 €",
-    "location": "Toulouse — Centre premium",
-    "format": "Présentiel, groupe de 8 max",
-    "duration": "4 jours",
+    "price": "Sur devis",
+    "location": "Saint-Orens-de-Gameville",
+    "format": "Présentiel",
+    "duration": "Sur mesure",
     "level": "Tous niveaux"
   },
   {
-    "id": "micro-aiguilles",
-    "name": "Microneedling Expert",
-    "description": "Formation technique pour pratiquer le microneedling en toute sécurité : protocoles, indications, suivi post-soin.",
+    "id": "reconversion",
+    "name": "Reconversion en esthétique",
+    "description": "Un accompagnement sérieux, humain et orienté vers la pratique pour construire des bases solides.",
     "program": [
-      "Jour 1 : indications, contre-indications, matériel",
-      "Jour 2 : gestes techniques, profondeur, protocoles avancés",
-      "Jour 3 : suivi post-traitement, plans de cure"
+      "Fondamentaux de l'esthétique professionnelle",
+      "Protocoles essentiels visage et regard",
+      "Mise en situation et cas pratiques",
+      "Structuration de votre projet professionnel"
     ],
-    "price": "2 100 €",
-    "location": "Toulouse — Centre premium",
-    "format": "Présentiel, groupe de 4 max",
-    "duration": "3 jours",
-    "level": "Niveau avancé"
+    "price": "Sur devis",
+    "location": "Saint-Orens-de-Gameville",
+    "format": "Présentiel",
+    "duration": "Sur mesure",
+    "level": "Débutant à intermédiaire"
   }
 ]

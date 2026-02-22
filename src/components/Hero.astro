@@ -1,34 +1,32 @@
 ---
 import Button from './Button.astro';
 const {
-  title = "L'esthétique signée ELINA B",
-  tagline = "Des prestations précises et des formations structurées, avec une direction artistique sobre et une exigence professionnelle.",
+  title = 'Elodie Mignot',
+  tagline = 'Esthéticienne passionnée depuis 20 ans à Saint-Orens-de-Gameville.',
 } = Astro.props;
 ---
-<section class="relative overflow-hidden bg-ivory">
-  <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,_rgba(255,255,255,0.92),_rgba(248,248,248,0.86)_44%,_rgba(235,235,235,0.58))]"></div>
+<section class="relative overflow-hidden bg-[linear-gradient(145deg,_rgba(253,248,238,0.9)_0%,_rgba(244,233,215,0.72)_48%,_rgba(250,245,236,0.86)_100%)]">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,_rgba(255,255,255,0.72),_rgba(255,255,255,0)_42%)]"></div>
+  <div class="absolute left-0 right-0 top-0 h-px bg-[linear-gradient(90deg,_rgba(183,154,107,0),_rgba(183,154,107,0.85),_rgba(183,154,107,0))]"></div>
+  <div class="absolute -left-24 top-14 h-56 w-56 rounded-full bg-gold/15 blur-3xl"></div>
   <div class="container-shell relative py-24 lg:py-32">
-    <div class="space-y-8">
-      <span class="text-xs font-semibold uppercase tracking-[0.38em] text-cocoa/70">ELINA B - Esthétique & formations</span>
-      <h1 class="font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
+    <div class="max-w-4xl space-y-8">
+      <span class="inline-flex text-[0.68rem] font-semibold uppercase tracking-[0.38em] text-cocoa/80">
+        Beauté, cosmétique et soins
+      </span>
+
+      <h1 class="font-display text-4xl leading-[1.08] sm:text-5xl lg:text-6xl">
         {title}
+        <span class="mt-2 block text-3xl text-gold sm:text-4xl lg:text-5xl">Prestations & formations esthétiques</span>
       </h1>
-      <p class="max-w-xl text-base text-cocoa/80">
-        {tagline}
+
+      <p class="max-w-3xl text-base leading-relaxed text-cocoa/85 sm:text-lg">
+        {tagline} Soins sur-mesure, expertise et résultats visibles pour sublimer votre peau et révéler votre éclat.
       </p>
+
       <div class="flex flex-wrap gap-4">
         <Button href="/prestations" variant="primary">Voir les prestations</Button>
-        <Button href="/formations" variant="secondary">Découvrir les formations</Button>
-      </div>
-      <div class="flex flex-wrap gap-6 text-xs uppercase tracking-[0.3em] text-cocoa/70">
-        <span class="flex items-center gap-2">
-          <span class="h-2 w-2 rounded-full bg-ink"></span>
-          Signature visuelle forte
-        </span>
-        <span class="flex items-center gap-2">
-          <span class="h-2 w-2 rounded-full bg-ink"></span>
-          Formations professionnelles
-        </span>
+        <Button href="/contact" variant="secondary">Prendre rendez-vous</Button>
       </div>
     </div>
   </div>

@@ -7,15 +7,29 @@ import CTASection from '../components/CTASection.astro';
 import prestations from '../data/prestations.json';
 ---
 <BaseLayout
-  title="Prestations — ELINA B - Esthétique & formations"
-  description="Découvrez nos prestations premium en beauté, cosmétique et soins."
+  title="Prestations — Elodie Mignot"
+  description="Prestations esthétiques sur-mesure : visage, regard, dermopigmentation, soins corps."
 >
   <section class="container-shell py-20">
     <SectionTitle
       eyebrow="Prestations"
       title="Des soins signatures pour chaque besoin"
-      subtitle="Nos protocoles sont personnalisés après diagnostic et adaptés à votre peau."
+      subtitle="Des prestations personnalisées, réalisées avec précision et exigence."
     />
+    <div class="mt-6 grid gap-4 text-sm text-cocoa/80 md:grid-cols-3">
+      <div class="rounded-2xl border border-gold/35 bg-[linear-gradient(165deg,_rgba(255,255,255,0.9),_rgba(247,244,238,0.78))] p-4 shadow-soft">
+        <p class="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Visage anti-âge</p>
+        <p class="mt-2">Protocoles ciblés pour préserver la jeunesse, stimuler l'éclat et répondre aux besoins uniques.</p>
+      </div>
+      <div class="rounded-2xl border border-gold/35 bg-[linear-gradient(165deg,_rgba(255,255,255,0.9),_rgba(247,244,238,0.78))] p-4 shadow-soft">
+        <p class="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Drainage corps</p>
+        <p class="mt-2">Techniques expertes pour relancer la circulation, affiner la silhouette et apporter légèreté.</p>
+      </div>
+      <div class="rounded-2xl border border-gold/35 bg-[linear-gradient(165deg,_rgba(255,255,255,0.9),_rgba(247,244,238,0.78))] p-4 shadow-soft">
+        <p class="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Dermopigmentation</p>
+        <p class="mt-2">Un travail minutieux et naturel pour sublimer les traits, avec une approche personnalisée.</p>
+      </div>
+    </div>
     <div class="mt-10">
       <PrestationsList items={prestations} />
     </div>
@@ -23,9 +37,9 @@ import prestations from '../data/prestations.json';
 
   <section class="container-shell py-20">
     <CTASection
-      title="Réserver votre rituel"
-      subtitle="Contactez-nous pour planifier votre prestation ou créer un protocole sur-mesure."
-      primaryLabel="Réserver maintenant"
+      title="Réserver votre soin"
+      subtitle="Contactez-moi pour planifier votre prestation ou créer un protocole sur-mesure."
+      primaryLabel="Prendre rendez-vous"
       primaryHref="/contact"
       secondaryLabel="Voir les formations"
       secondaryHref="/formations"

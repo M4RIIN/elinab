@@ -3,17 +3,21 @@ const { items = [] } = Astro.props;
 ---
 <div class="grid gap-6 md:grid-cols-2">
   {items.map((item) => (
-    <article class="rounded-2xl border border-sand/60 bg-white/70 p-6 shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-lift">
-      <div class="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-cocoa/70">
-        <span>{item.duration}</span>
-        <span class="text-gold">{item.price}</span>
-      </div>
+    <article class="rounded-2xl border border-gold/35 bg-[linear-gradient(165deg,_rgba(255,255,255,0.9),_rgba(247,244,238,0.78))] p-6 shadow-soft transition duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-lift">
+      {(item.duration || item.price) && (
+        <div class="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-cocoa/75">
+          <span>{item.duration}</span>
+          <span class="text-gold">{item.price}</span>
+        </div>
+      )}
       <h3 class="mt-4 font-display text-2xl">{item.name}</h3>
-      <div class="mt-4 space-y-3 text-sm text-cocoa/80">
-        {item.description.map((paragraph) => (
-          <p>{paragraph}</p>
-        ))}
-      </div>
+      {item.description?.length > 0 && (
+        <div class="mt-4 space-y-3 text-sm text-cocoa/80">
+          {item.description.map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
+        </div>
+      )}
     </article>
   ))}
 </div>

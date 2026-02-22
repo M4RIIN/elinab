@@ -8,7 +8,7 @@ export default {
         nude: '#EEEEEE',
         blush: '#E1E1E1',
         sand: '#C9C9C9',
-        gold: '#8C8C8C',
+        gold: '#B79A6B',
         ink: '#101010',
         cocoa: '#4A4A4A',
       },

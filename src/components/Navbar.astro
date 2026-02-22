@@ -8,12 +8,12 @@ const links = [
 ];
 const isActive = (href) => (href === '/' ? pathname === '/' : pathname.startsWith(href));
 ---
-<header class="fixed left-0 right-0 top-0 z-50 border-b border-sand/40 bg-ivory/90 backdrop-blur-md">
+<header class="fixed left-0 right-0 top-0 z-50 border-b border-gold/30 bg-ivory/92 backdrop-blur-md">
   <div class="container-shell flex h-20 items-center justify-between gap-6">
     <a href="/" class="flex items-center gap-3">
-      <img src="/logo.png" alt="ELINA B - Esthétique & formations" class="h-10 w-auto sm:h-12" />
+      <img src="/logo.png" alt="Elodie Mignot - Esthétique" class="h-10 w-auto sm:h-12" />
       <span class="hidden text-[0.62rem] font-medium uppercase tracking-[0.24em] text-cocoa/80 lg:inline">
-        ELINA B - Esthétique & formations
+        Elodie Mignot - Beauté, cosmétique et soins
       </span>
     </a>
     <nav class="hidden items-center gap-8 text-[0.7rem] font-semibold uppercase tracking-[0.2em] md:flex">
@@ -28,7 +28,7 @@ const isActive = (href) => (href === '/' ? pathname === '/' : pathname.startsWit
           {link.label}
           <span
             class:list={[
-              'absolute -bottom-1 left-0 h-px w-full bg-gold transition-opacity duration-200',
+              'absolute -bottom-1 left-0 h-px w-full bg-[linear-gradient(90deg,_rgba(183,154,107,0),_rgba(183,154,107,1),_rgba(183,154,107,0))] transition-opacity duration-200',
               isActive(link.href) ? 'opacity-100' : 'opacity-0',
             ]}
           ></span>
@@ -38,7 +38,7 @@ const isActive = (href) => (href === '/' ? pathname === '/' : pathname.startsWit
     <div class="flex items-center gap-3">
       <a
         href="/contact"
-        class="hidden rounded-full border border-ink bg-ink px-5 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-ivory transition duration-200 hover:-translate-y-0.5 hover:bg-ink/90 md:inline-flex"
+        class="hidden rounded-full border border-gold/70 bg-[linear-gradient(145deg,_rgba(16,16,16,1),_rgba(32,32,32,0.98))] px-5 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-ivory transition duration-200 hover:-translate-y-0.5 hover:border-gold md:inline-flex"
       >
         Réserver
       </a>
@@ -51,9 +51,9 @@ const isActive = (href) => (href === '/' ? pathname === '/' : pathname.startsWit
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
           </svg>
         </summary>
-        <div class="absolute right-0 mt-3 w-64 rounded-2xl border border-sand/60 bg-ivory p-4 shadow-lift">
-          <p class="mb-3 border-b border-sand/50 pb-2 text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-cocoa/70">
-            ELINA B - Esthétique & formations
+        <div class="absolute right-0 mt-3 w-64 rounded-2xl border border-gold/35 bg-ivory p-4 shadow-lift">
+          <p class="mb-3 border-b border-gold/30 pb-2 text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-cocoa/70">
+            Elodie Mignot - Beauté, cosmétique et soins
           </p>
           <nav class="flex flex-col gap-3 text-[0.68rem] font-semibold uppercase tracking-[0.2em]">
             {links.map((link) => (

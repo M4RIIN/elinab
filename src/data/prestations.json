@@ -1,52 +1,101 @@
 [
   {
-    "id": "rituel-eclat",
-    "name": "Rituel Éclat Signature",
+    "id": "micropigmentation",
+    "name": "Micropigmentation",
     "description": [
-      "Un soin complet conçu pour raviver la luminosité, affiner le grain de peau et détendre les traits.",
-      "Nettoyage profond, massage sculptant et masque cocooning pour une peau souple et homogène."
+      "Pigmentation minutieuse pour intensifier et harmoniser les traits."
     ],
-    "duration": "75 min",
-    "price": "À partir de 120 €"
+    "duration": "",
+    "price": ""
   },
   {
-    "id": "dermaplaning",
-    "name": "Dermaplaning Haute Précision",
+    "id": "browlift",
+    "name": "Browlift",
     "description": [
-      "Exfoliation mécanique douce pour éliminer les cellules mortes et lisser la surface cutanée.",
-      "Idéal avant un événement pour un teint uniforme et lumineux."
+      "Restructure et discipline les sourcils pour un effet lifté naturel."
     ],
-    "duration": "45 min",
-    "price": "95 €"
+    "duration": "",
+    "price": ""
   },
   {
-    "id": "lift-cils",
-    "name": "Lifting & Soin des Cils",
+    "id": "detatouage",
+    "name": "Détatouage",
     "description": [
-      "Courbure élégante, regard ouvert, nutrition intense grâce à un soin kératine.",
-      "Effet naturel et durable, sans extensions."
+      "Atténuation ciblée d'anciens pigments pour un rendu plus uniforme."
     ],
-    "duration": "60 min",
-    "price": "89 €"
+    "duration": "",
+    "price": ""
+  },
+  {
+    "id": "hydraclean",
+    "name": "Hydraclean",
+    "description": [
+      "Nettoyage profond et éclat immédiat pour une peau nette."
+    ],
+    "duration": "",
+    "price": ""
+  },
+  {
+    "id": "restructuration",
+    "name": "Restructuration",
+    "description": [
+      "Remise en forme des sourcils pour un cadre du regard précis."
+    ],
+    "duration": "",
+    "price": ""
+  },
+  {
+    "id": "epilation-au-fil",
+    "name": "Épilation au fil",
+    "description": [
+      "Technique douce et précise pour un tracé net."
+    ],
+    "duration": "",
+    "price": ""
+  },
+  {
+    "id": "rehaussement-de-cils",
+    "name": "Rehaussement de cils",
+    "description": [
+      "Courbure naturelle pour ouvrir le regard sans extensions."
+    ],
+    "duration": "",
+    "price": ""
+  },
+  {
+    "id": "blanchiment-dentaire",
+    "name": "Blanchiment dentaire",
+    "description": [
+      "Sourire plus lumineux grâce à un protocole esthétique sûr."
+    ],
+    "duration": "",
+    "price": ""
+  },
+  {
+    "id": "lipocavitation",
+    "name": "Lipocavitation",
+    "description": [
+      "Action ciblée pour affiner la silhouette et lisser."
+    ],
+    "duration": "",
+    "price": ""
   },
   {
     "id": "microneedling",
-    "name": "Microneedling Régénérant",
+    "name": "Microneedling",
     "description": [
-      "Stimule la production de collagène et améliore la texture de la peau.",
-      "Cible les rides, les pores et les marques superficielles."
+      "Stimulation cutanée pour améliorer texture et éclat."
     ],
-    "duration": "60 min",
-    "price": "À partir de 140 €"
+    "duration": "",
+    "price": ""
   },
   {
-    "id": "massage-sculptant",
-    "name": "Massage Sculptant Visage",
+    "id": "extension-de-cils",
+    "name": "Extension de cils",
     "description": [
-      "Manœuvres profondes inspirées du kobido pour redessiner l'ovale et relâcher les tensions.",
-      "Un moment de bien-être qui illumine instantanément le teint."
+      "Volume sur mesure pour un regard intensifié."
     ],
-    "duration": "50 min",
-    "price": "110 €"
+    "duration": "",
+    "price": ""
   }
 ]
