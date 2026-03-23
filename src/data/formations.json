@@ -1,34 +1,111 @@
 [
   {
-    "id": "perfectionnement",
-    "name": "Perfectionnement esthétique",
-    "description": "Pour les professionnelles souhaitant affiner leurs gestes, gagner en précision et développer une signature de soin.",
-    "program": [
-      "Diagnostic et personnalisation des protocoles",
-      "Gestuelle experte et sécurité des pratiques",
-      "Ritualisation du soin et expérience client",
-      "Conseil, suivi et fidélisation"
-    ],
-    "price": "Sur devis",
-    "location": "Saint-Orens-de-Gameville",
-    "format": "Présentiel",
-    "duration": "Sur mesure",
-    "level": "Tous niveaux"
+    "id": "browlift",
+    "name": "Browlift",
+    "category": "Beauté du regard",
+    "price": "300€",
+    "duration": "1 jour"
   },
   {
-    "id": "reconversion",
-    "name": "Reconversion en esthétique",
-    "description": "Un accompagnement sérieux, humain et orienté vers la pratique pour construire des bases solides.",
-    "program": [
-      "Fondamentaux de l'esthétique professionnelle",
-      "Protocoles essentiels visage et regard",
-      "Mise en situation et cas pratiques",
-      "Structuration de votre projet professionnel"
-    ],
-    "price": "Sur devis",
-    "location": "Saint-Orens-de-Gameville",
-    "format": "Présentiel",
-    "duration": "Sur mesure",
-    "level": "Débutant à intermédiaire"
+    "id": "rehaussement-cils",
+    "name": "Rehaussement de cils",
+    "category": "Beauté du regard",
+    "price": "300€"
+  },
+  {
+    "id": "lash-lift-coreen",
+    "name": "Lash lift Coréen",
+    "category": "Beauté du regard",
+    "price": "350€"
+  },
+  {
+    "id": "restructuration-sourcils",
+    "name": "Restructuration des sourcils",
+    "category": "Beauté du regard",
+    "price": "280€"
+  },
+  {
+    "id": "epilation-fil",
+    "name": "Épilation au fil",
+    "category": "Beauté du regard",
+    "price": "560€",
+    "duration": "2 jours"
+  },
+  {
+    "id": "drainage-bresilien",
+    "name": "Drainage Brésilien",
+    "category": "Corps",
+    "price": "560€",
+    "duration": "2 jours"
+  },
+  {
+    "id": "maderotherapie",
+    "name": "Madérothérapie",
+    "category": "Corps",
+    "price": "560€",
+    "duration": "2 jours"
+  },
+  {
+    "id": "massage-relaxant",
+    "name": "Massage Relaxant",
+    "category": "Corps",
+    "price": "560€",
+    "duration": "2 jours"
+  },
+  {
+    "id": "massage-dos",
+    "name": "Massage du dos",
+    "category": "Corps",
+    "price": "560€",
+    "duration": "2 jours"
+  },
+  {
+    "id": "massage-cranien",
+    "name": "Massage Crânien",
+    "category": "Corps",
+    "price": "280€",
+    "duration": "1 jour"
+  },
+  {
+    "id": "dermo-sourcils",
+    "name": "Dermopigmentation des sourcils",
+    "category": "Dermopigmentation",
+    "price": "1350€",
+    "duration": "Initiation - 3 jours"
+  },
+  {
+    "id": "dermo-levres",
+    "name": "Dermopigmentation des lèvres",
+    "category": "Dermopigmentation",
+    "price": "1350€",
+    "duration": "Initiation - 3 jours"
+  },
+  {
+    "id": "perfectionnement-dermo",
+    "name": "Perfectionnement",
+    "category": "Dermopigmentation",
+    "price": "450€",
+    "duration": "1 jour"
+  },
+  {
+    "id": "micropigmentation",
+    "name": "Micropigmentation",
+    "category": "Dermopigmentation",
+    "price": "800€",
+    "duration": "Initiation - 2 jours"
+  },
+  {
+    "id": "nanoneedling",
+    "name": "Nanoneedling",
+    "category": "Soin du visage",
+    "price": "400€",
+    "duration": "1 jour"
+  },
+  {
+    "id": "hydrafacial",
+    "name": "Hydrafacial",
+    "category": "Soin du visage",
+    "price": "400€",
+    "duration": "1 jour"
   }
 ]

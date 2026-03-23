@@ -60,8 +60,8 @@ const toBaseHref = (href) => `${base}${trimLeadingSlash(href)}`;
       <a class="block transition hover:text-ink" href={toBaseHref('/prestations')}>Prestations</a>
       <a class="block transition hover:text-ink" href={toBaseHref('/formations')}>Formations</a>
       <a class="block transition hover:text-ink" href={toBaseHref('/contact')}>Contact</a>
-      <a class="block transition hover:text-ink" href="#">Mentions légales</a>
-      <a class="block transition hover:text-ink" href="#">Politique de confidentialité</a>
+      <a class="block transition hover:text-ink" href={toBaseHref('/mentions-legales')}>Mentions légales</a>
+      <a class="block transition hover:text-ink" href={toBaseHref('/politique-de-confidentialite')}>Politique de confidentialité</a>
     </div>
   </div>
   <div class="border-t border-gold/25 py-6 text-center text-xs text-cocoa/70">

@@ -5,21 +5,65 @@ import FormationDetails from '../components/FormationDetails.astro';
 import CTASection from '../components/CTASection.astro';
 
 import formations from '../data/formations.json';
+
+const categoryOrder = ['Beauté du regard', 'Corps', 'Dermopigmentation', 'Soin du visage'];
+const formationsByCategory = categoryOrder.map((category) => ({
+  category,
+  items: formations.filter((formation) => formation.category === category)
+}));
 ---
 <BaseLayout
-  title="Formations — Elodie Mignot"
-  description="Formations esthétiques sérieuses, humaines et orientées vers la pratique."
+  title="Formations — ELINA B FORMATION"
+  description="Des formations esthétiques complètes et certifiantes à Saint-Orens-de-Gameville, près de Toulouse."
+  keywords="formations esthétique, beauté du regard, soin du visage, anti-âge, browlift, maquillage semi-permanent, dermopigmentation, micropigmentation, épilation, massage, formation maderotherapie, minceur, drainage brésilien, rehaussement de cils, Toulouse, Saint-Orens-de-Gameville"
 >
   <section class="container-shell py-20">
     <SectionTitle
       eyebrow="Formations"
-      title="Former des professionnelles sûres et confiantes"
-      subtitle="Formations pour se perfectionner ou se reconvertir, avec une approche humaine, exigeante et tournée vers la pratique."
+      title="ELINA B FORMATION"
+      subtitle="Des formations complètes et certifiantes pour développer vos compétences et réussir dans le domaine de la beauté."
     />
-    <div class="mt-10 grid gap-6">
-      {formations.map((formation) => (
-        <FormationDetails formation={formation} />
+    <p class="mt-6 max-w-3xl text-sm text-cocoa/80">
+      Formations esthétique à Toulouse et environs : beauté du regard, soin du visage anti-âge, browlift,
+      rehaussement de cils, maquillage semi-permanent, dermopigmentation et micropigmentation, épilation, massage,
+      minceur, drainage brésilien et formation maderotherapie.
+    </p>
+    <div class="mt-10 grid gap-12">
+      {formationsByCategory.map((group) => (
+        <div class="grid gap-6">
+          <div class="flex items-center gap-4">
+            <span class="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Catégorie</span>
+            <h2 class="font-display text-3xl">{group.category}</h2>
+          </div>
+          <div class="grid gap-6 md:grid-cols-2">
+            {group.items.map((formation) => (
+              <FormationDetails formation={formation} />
+            ))}
+          </div>
+        </div>
       ))}
+    </div>
+  </section>
+
+  <section class="container-shell py-16">
+    <div class="grid gap-6 md:grid-cols-2">
+      <article class="rounded-2xl border border-gold/35 bg-[linear-gradient(165deg,_rgba(255,255,255,0.9),_rgba(247,244,238,0.78))] p-6 shadow-soft">
+        <h3 class="font-display text-2xl">Inclus dans chaque formation</h3>
+        <ul class="mt-4 list-disc space-y-1 pl-5 text-sm text-cocoa/80">
+          <li>Support de cours complet</li>
+          <li>Certificat de formation</li>
+          <li>Suivi après formation</li>
+          <li>Pratique sur modèle</li>
+        </ul>
+      </article>
+      <article class="rounded-2xl border border-gold/35 bg-[linear-gradient(165deg,_rgba(255,255,255,0.9),_rgba(247,244,238,0.78))] p-6 shadow-soft">
+        <h3 class="font-display text-2xl">Public concerné</h3>
+        <ul class="mt-4 list-disc space-y-1 pl-5 text-sm text-cocoa/80">
+          <li>Débutantes</li>
+          <li>Professionnelles</li>
+          <li>Personnes en reconversion</li>
+        </ul>
+      </article>
     </div>
   </section>
 

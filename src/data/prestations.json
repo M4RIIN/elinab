@@ -1,101 +1,160 @@
 [
   {
-    "id": "micropigmentation",
-    "name": "Micropigmentation",
-    "description": [
-      "Pigmentation minutieuse pour intensifier et harmoniser les traits."
-    ],
-    "duration": "",
-    "price": ""
+    "id": "browlift-teinture-soin",
+    "name": "Browlift – Teinture et soin",
+    "category": "Beauté du regard",
+    "price": "60€"
   },
   {
-    "id": "browlift",
-    "name": "Browlift",
-    "description": [
-      "Restructure et discipline les sourcils pour un effet lifté naturel."
-    ],
-    "duration": "",
-    "price": ""
+    "id": "browlift-soin-keratine",
+    "name": "Browlift et soin kératine",
+    "category": "Beauté du regard",
+    "price": "50€"
   },
   {
-    "id": "detatouage",
-    "name": "Détatouage",
-    "description": [
-      "Atténuation ciblée d'anciens pigments pour un rendu plus uniforme."
-    ],
-    "duration": "",
-    "price": ""
+    "id": "rehaussement-teinture-soin",
+    "name": "Rehaussement de cils, teinture et soin",
+    "category": "Beauté du regard",
+    "price": "70€"
   },
   {
-    "id": "hydraclean",
-    "name": "Hydraclean",
-    "description": [
-      "Nettoyage profond et éclat immédiat pour une peau nette."
-    ],
-    "duration": "",
-    "price": ""
+    "id": "rehaussement-soin",
+    "name": "Rehaussement de cils et soin",
+    "category": "Beauté du regard",
+    "price": "60€"
   },
   {
-    "id": "restructuration",
-    "name": "Restructuration",
-    "description": [
-      "Remise en forme des sourcils pour un cadre du regard précis."
-    ],
-    "duration": "",
-    "price": ""
+    "id": "lash-lift-coreen-teinture",
+    "name": "Lash lift Coréen et teinture",
+    "category": "Beauté du regard",
+    "price": "80€"
   },
   {
-    "id": "epilation-au-fil",
-    "name": "Épilation au fil",
-    "description": [
-      "Technique douce et précise pour un tracé net."
-    ],
-    "duration": "",
-    "price": ""
+    "id": "restructuration-teinture",
+    "name": "Restructuration des sourcils et teinture",
+    "category": "Beauté du regard",
+    "price": "35€"
   },
   {
-    "id": "rehaussement-de-cils",
-    "name": "Rehaussement de cils",
-    "description": [
-      "Courbure naturelle pour ouvrir le regard sans extensions."
-    ],
-    "duration": "",
-    "price": ""
+    "id": "restructuration-sourcils",
+    "name": "Restructuration des sourcils",
+    "category": "Beauté du regard",
+    "price": "15€"
   },
   {
-    "id": "blanchiment-dentaire",
-    "name": "Blanchiment dentaire",
-    "description": [
-      "Sourire plus lumineux grâce à un protocole esthétique sûr."
-    ],
-    "duration": "",
-    "price": ""
+    "id": "epilation-levre-superieure-fil",
+    "name": "Épilation de la lèvre supérieure au fil",
+    "category": "Beauté du regard",
+    "price": "9€"
   },
   {
-    "id": "lipocavitation",
-    "name": "Lipocavitation",
-    "description": [
-      "Action ciblée pour affiner la silhouette et lisser."
-    ],
-    "duration": "",
-    "price": ""
+    "id": "epilation-sourcils-levres-menton-fil",
+    "name": "Épilation sourcils, lèvres et menton au fil",
+    "category": "Beauté du regard",
+    "price": "30€"
   },
   {
-    "id": "microneedling",
-    "name": "Microneedling",
-    "description": [
-      "Stimulation cutanée pour améliorer texture et éclat."
-    ],
-    "duration": "",
-    "price": ""
+    "id": "soin-hydraskin",
+    "name": "Soin HydraSkin",
+    "category": "Soins du visage",
+    "duration": "1h15",
+    "price": "85€"
   },
   {
-    "id": "extension-de-cils",
-    "name": "Extension de cils",
-    "description": [
-      "Volume sur mesure pour un regard intensifié."
-    ],
-    "duration": "",
-    "price": ""
+    "id": "soin-hydraskin-ado",
+    "name": "Soin HydraSkin Ado",
+    "category": "Soins du visage",
+    "duration": "45mn",
+    "price": "50€"
+  },
+  {
+    "id": "nanoneedling-visage",
+    "name": "Nanoneedling",
+    "category": "Soins du visage",
+    "duration": "1h",
+    "price": "80€"
+  },
+  {
+    "id": "soin-gua-sha-detox",
+    "name": "Soin au Gua Sha détox",
+    "category": "Soins du visage",
+    "duration": "1h",
+    "price": "80€"
+  },
+  {
+    "id": "massage-facial-japonais",
+    "name": "Massage anti-âge facial japonais",
+    "category": "Soins du visage",
+    "duration": "1h",
+    "price": "75€"
+  },
+  {
+    "id": "powder-brow",
+    "name": "Powder Brow (Sourcils poudré)",
+    "category": "Maquillage semi-permanent",
+    "price": "250€"
+  },
+  {
+    "id": "3d-lips",
+    "name": "3D Lips",
+    "category": "Maquillage semi-permanent",
+    "price": "250€"
+  },
+  {
+    "id": "aquarel-lips",
+    "name": "Aquarel Lips (effet lèvres mordues naturel)",
+    "category": "Maquillage semi-permanent",
+    "price": "250€"
+  },
+  {
+    "id": "ras-de-cils-superieur",
+    "name": "Ras de cils supérieur",
+    "category": "Maquillage semi-permanent",
+    "price": "160€"
+  },
+  {
+    "id": "retouche-fixatrice-6-8-semaines-premiere",
+    "name": "Retouche fixatrice 6 à 8 semaines après la première prestation",
+    "category": "Maquillage semi-permanent",
+    "price": "60€"
+  },
+  {
+    "id": "retouche-annuelle",
+    "name": "Retouche annuelle",
+    "category": "Maquillage semi-permanent",
+    "price": "150€"
+  },
+  {
+    "id": "shading-micropigmentation",
+    "name": "Shading micropigmentation (technique manuelle)",
+    "category": "Maquillage semi-permanent",
+    "price": "200€"
+  },
+  {
+    "id": "retouche-fixatrice-6-8-semaines",
+    "name": "Retouche fixatrice 6 à 8 semaines",
+    "category": "Maquillage semi-permanent",
+    "price": "60€"
+  },
+  {
+    "id": "drainage-bresilien",
+    "name": "Drainage Brésilien",
+    "category": "Soins corps",
+    "duration": "1h",
+    "price": "100€"
+  },
+  {
+    "id": "drainage-bresilien-remodelant",
+    "name": "Drainage Brésilien remodelant",
+    "category": "Soins corps",
+    "duration": "1h20",
+    "price": "140€"
+  },
+  {
+    "id": "massage-relaxant-sur-mesure",
+    "name": "Massage relaxant sur mesure",
+    "category": "Soins corps",
+    "duration": "1h",
+    "price": "65€"
   }
 ]

@@ -11,7 +11,11 @@ const { items = [] } = Astro.props;
         </div>
       )}
       <h3 class="mt-4 font-display text-2xl">{item.name}</h3>
-      {item.description?.length > 0 && (
+      {item.category && <p class="mt-3 text-sm text-cocoa/80">{item.category}</p>}
+      {typeof item.description === 'string' && item.description && (
+        <p class="mt-3 text-sm text-cocoa/80">{item.description}</p>
+      )}
+      {Array.isArray(item.description) && item.description.length > 0 && (
         <div class="mt-4 space-y-3 text-sm text-cocoa/80">
           {item.description.map((paragraph) => (
             <p>{paragraph}</p>

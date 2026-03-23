@@ -1,14 +1,14 @@
 ---
-const { eyebrow, title, subtitle, align = 'left' } = Astro.props;
+const { eyebrow, title, subtitle, align = 'left', titleClass = '', eyebrowClass = '' } = Astro.props;
 const alignClass = align === 'center' ? 'text-center items-center' : 'text-left items-start';
 ---
 <div class={`flex flex-col gap-3 ${alignClass}`}>
   {eyebrow && (
-    <span class="text-xs font-semibold uppercase tracking-[0.35em] text-gold">
+    <span class={`text-xs font-semibold uppercase tracking-[0.35em] text-gold ${eyebrowClass}`}>
       {eyebrow}
     </span>
   )}
-  <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl">
+  <h2 class={`font-display text-3xl sm:text-4xl lg:text-5xl ${titleClass}`}>
     {title}
   </h2>
   {subtitle && <p class="max-w-2xl text-sm text-cocoa/85">{subtitle}</p>}

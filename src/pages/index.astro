@@ -12,12 +12,21 @@ import prestations from '../data/prestations.json';
 import formations from '../data/formations.json';
 import meImage from '../assets/me.png';
 
+const prestationsCategoryOrder = ['Beauté du regard', 'Soins du visage', 'Maquillage semi-permanent', 'Soins corps'];
+const prestationCategories = prestationsCategoryOrder.filter((category) =>
+  prestations.some((prestation) => prestation.category === category)
+);
 const prestationsPreview = prestations;
-const formationsPreview = formations.slice(0, 2);
+const categoryOrder = ['Beauté du regard', 'Corps', 'Dermopigmentation', 'Soin du visage'];
+const formationCategories = categoryOrder.filter((category) =>
+  formations.some((formation) => formation.category === category)
+);
+const formationsPreview = formations;
 ---
 <BaseLayout
   title="Elodie Mignot - Beauté, cosmétique et soins"
-  description="Esthéticienne passionnée depuis 20 ans, prestations et formations esthétiques à Saint-Orens-de-Gameville."
+  description="Esthéticienne passionnée depuis 20 ans, prestations et formations esthétiques à Saint-Orens-de-Gameville, près de Toulouse."
+  keywords="esthétique, formations esthétique, beauté du regard, soin du visage, anti-âge, browlift, maquillage semi-permanent, dermopigmentation, micropigmentation, épilation, massage, formation maderotherapie, minceur, drainage brésilien, rehaussement de cils, Toulouse, Saint-Orens-de-Gameville"
   image={meImage.src}
 >
   <Hero />
@@ -28,6 +37,7 @@ const formationsPreview = formations.slice(0, 2);
         eyebrow="Prestations"
         title="Rituels haut de gamme pour révéler votre éclat"
         subtitle="Chaque prestation est conçue comme un moment exclusif : diagnostic précis, gestuelle experte et résultats visibles."
+        eyebrowClass="text-sm sm:text-base tracking-[0.45em]"
       />
       <div class="self-center text-sm text-cocoa/80">
         <p>
@@ -43,6 +53,11 @@ const formationsPreview = formations.slice(0, 2);
         </div>
       </div>
     </div>
+    <div class="mt-6 flex flex-wrap gap-3 text-xs uppercase tracking-[0.3em] text-cocoa/70">
+      {prestationCategories.map((category) => (
+        <span class="rounded-full border border-gold/40 px-4 py-2">{category}</span>
+      ))}
+    </div>
     <div class="mt-10">
       <div class="relative">
         <div
@@ -51,12 +66,14 @@ const formationsPreview = formations.slice(0, 2);
         >
           {prestationsPreview.map((item) => (
             <article class="min-w-[calc(50%-0.75rem)] rounded-2xl border border-gold/35 bg-[linear-gradient(165deg,_rgba(255,255,255,0.9),_rgba(247,244,238,0.78))] p-6 shadow-soft transition duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-lift">
-              <h3 class="font-display text-2xl">{item.name}</h3>
-              <div class="mt-4 space-y-3 text-sm text-cocoa/80">
-                {item.description.map((paragraph) => (
-                  <p>{paragraph}</p>
-                ))}
-              </div>
+              {(item.duration || item.price) && (
+                <div class="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-cocoa/75">
+                  <span>{item.duration}</span>
+                  <span class="text-gold">{item.price}</span>
+                </div>
+              )}
+              <h3 class="mt-4 font-display text-2xl">{item.name}</h3>
+              {item.category && <p class="mt-3 text-sm text-cocoa/80">{item.category}</p>}
             </article>
           ))}
         </div>
@@ -91,14 +108,48 @@ const formationsPreview = formations.slice(0, 2);
     <div class="flex flex-col gap-10">
       <SectionTitle
         eyebrow="Formations"
-        title="Des formations structurées pour aller plus loin"
-        subtitle="Petits groupes, protocoles éprouvés, suivi post-formation et outils pédagogiques premium."
+        title="ELINA B FORMATION"
+        subtitle="Des formations complètes et certifiantes pour développer vos compétences et réussir dans le domaine de la beauté."
+        eyebrowClass="text-sm sm:text-base tracking-[0.45em]"
       />
-      <div class="grid gap-6 md:grid-cols-2">
-        {formationsPreview.map((formation) => (
-          <FormationCard formation={formation} />
+      <div class="flex flex-wrap gap-3 text-xs uppercase tracking-[0.3em] text-cocoa/70">
+        {formationCategories.map((category) => (
+          <span class="rounded-full border border-gold/40 px-4 py-2">{category}</span>
         ))}
       </div>
+      <div class="relative">
+        <div
+          id="formations-carousel"
+          class="flex gap-6 overflow-hidden scroll-smooth py-4"
+        >
+          {formationsPreview.map((formation) => (
+            <FormationCard formation={formation} className="min-w-[calc(50%-0.75rem)]" />
+          ))}
+        </div>
+        <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center">
+          <button
+            id="formations-prev"
+            class="pointer-events-auto -ml-3 inline-flex h-12 w-12 items-center justify-center rounded-full border border-gold/50 bg-ivory/90 text-ink shadow-soft transition hover:-translate-y-0.5 hover:border-gold"
+            aria-label="Voir la formation précédente"
+          >
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 6l-6 6 6 6" />
+            </svg>
+          </button>
+        </div>
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center">
+          <button
+            id="formations-next"
+            class="pointer-events-auto -mr-3 inline-flex h-12 w-12 items-center justify-center rounded-full border border-gold/50 bg-ivory/90 text-ink shadow-soft transition hover:-translate-y-0.5 hover:border-gold"
+            aria-label="Voir la formation suivante"
+          >
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div id="formations-dots" class="mt-6 flex justify-center gap-2"></div>
       <div>
         <Button href="/formations" variant="secondary">Découvrir toutes les formations</Button>
       </div>
@@ -136,8 +187,6 @@ const formationsPreview = formations.slice(0, 2);
     </div>
   </section>
 
-  <Testimonials />
-
   <FAQAccordion />
 
   <section class="container-shell py-20">
@@ -153,12 +202,14 @@ const formationsPreview = formations.slice(0, 2);
 </BaseLayout>
 
 <script>
-  const track = document.querySelector('#prestations-carousel');
-  const dots = document.querySelector('#prestations-dots');
-  const prevBtn = document.querySelector('#prestations-prev');
-  const nextBtn = document.querySelector('#prestations-next');
+  const initCarousel = ({ trackId, dotsId, prevId, nextId, label }) => {
+    const track = document.querySelector(trackId);
+    const dots = document.querySelector(dotsId);
+    const prevBtn = document.querySelector(prevId);
+    const nextBtn = document.querySelector(nextId);
 
-  if (track && dots) {
+    if (!track || !dots) return;
+
     const gap = 24;
     let timer = null;
     let isPaused = false;
@@ -195,7 +246,7 @@ const formationsPreview = formations.slice(0, 2);
         button.type = 'button';
         button.className =
           'h-2.5 w-2.5 rounded-full border border-gold/50 transition hover:scale-110';
-        button.setAttribute('aria-label', `Aller à la prestation ${i + 1}`);
+        button.setAttribute('aria-label', `Aller à ${label} ${i + 1}`);
         button.addEventListener('click', () => scrollToIndex(i));
         dots.appendChild(button);
       }
@@ -254,5 +305,21 @@ const formationsPreview = formations.slice(0, 2);
     startAuto();
 
     window.addEventListener('beforeunload', stopAuto);
-  }
+  };
+
+  initCarousel({
+    trackId: '#prestations-carousel',
+    dotsId: '#prestations-dots',
+    prevId: '#prestations-prev',
+    nextId: '#prestations-next',
+    label: 'la prestation'
+  });
+
+  initCarousel({
+    trackId: '#formations-carousel',
+    dotsId: '#formations-dots',
+    prevId: '#formations-prev',
+    nextId: '#formations-next',
+    label: 'la formation'
+  });
 </script>

@@ -1,7 +1,7 @@
 ---
-const { formation } = Astro.props;
+const { formation, className = '' } = Astro.props;
 ---
-<article class="rounded-2xl border border-gold/35 bg-[linear-gradient(165deg,_rgba(255,255,255,0.9),_rgba(247,244,238,0.78))] p-6 shadow-soft transition duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-lift">
+<article class={`${className} rounded-2xl border border-gold/35 bg-[linear-gradient(165deg,_rgba(255,255,255,0.9),_rgba(247,244,238,0.78))] p-6 shadow-soft transition duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-lift`}>
   {(formation.duration || formation.price) && (
     <div class="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-cocoa/75">
       <span>{formation.duration}</span>
@@ -9,7 +9,7 @@ const { formation } = Astro.props;
     </div>
   )}
   <h3 class="mt-4 font-display text-2xl">{formation.name}</h3>
-  <p class="mt-3 text-sm text-cocoa/80">{formation.description}</p>
+  {formation.category && <p class="mt-3 text-sm text-cocoa/80">{formation.category}</p>}
   {(formation.format || formation.location) && (
     <div class="mt-4 flex flex-wrap gap-3 text-xs uppercase tracking-[0.3em] text-cocoa/70">
       {formation.format && <span>{formation.format}</span>}
