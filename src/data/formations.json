@@ -10,19 +10,22 @@
     "id": "rehaussement-cils",
     "name": "Rehaussement de cils",
     "category": "Beauté du regard",
-    "price": "300€"
+    "price": "300€",
+    "duration": "1 jour"
   },
   {
     "id": "lash-lift-coreen",
     "name": "Lash lift Coréen",
     "category": "Beauté du regard",
-    "price": "350€"
+    "price": "350€",
+    "duration": "1 jour"
   },
   {
     "id": "restructuration-sourcils",
     "name": "Restructuration des sourcils",
     "category": "Beauté du regard",
-    "price": "280€"
+    "price": "280€",
+    "duration": "1 jour"
   },
   {
     "id": "epilation-fil",
@@ -68,29 +71,29 @@
   },
   {
     "id": "dermo-sourcils",
-    "name": "Dermopigmentation des sourcils",
-    "category": "Dermopigmentation",
+    "name": "Maquillage semi permanent des sourcils",
+    "category": "Maquillage semi permanent",
     "price": "1350€",
     "duration": "Initiation - 3 jours"
   },
   {
     "id": "dermo-levres",
-    "name": "Dermopigmentation des lèvres",
-    "category": "Dermopigmentation",
+    "name": "Maquillage semi permanent des lèvres",
+    "category": "Maquillage semi permanent",
     "price": "1350€",
     "duration": "Initiation - 3 jours"
   },
   {
     "id": "perfectionnement-dermo",
     "name": "Perfectionnement",
-    "category": "Dermopigmentation",
+    "category": "Maquillage semi permanent",
     "price": "450€",
     "duration": "1 jour"
   },
   {
     "id": "micropigmentation",
     "name": "Micropigmentation",
-    "category": "Dermopigmentation",
+    "category": "Maquillage semi permanent",
     "price": "800€",
     "duration": "Initiation - 2 jours"
   },
