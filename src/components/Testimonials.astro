@@ -1,22 +1,44 @@
 ---
 const testimonials = [
   {
-    name: 'Charlotte R.',
-    role: 'Cliente fidèle',
     quote:
-      "Une atmosphère luxueuse et des résultats immédiats. Chaque soin est pensé dans le détail, on se sent accompagnée du début à la fin.",
+      "premier rehaussement de cils et c est parfait je recommande à 100% en plus elodie est vraiment charmante et très professionnelle merci elodie 😊",
   },
   {
-    name: 'Amélie P.',
-    role: 'Stagiaire',
-    quote:
-      "Formation exigeante, très structurée. J'ai gagné en confiance et en précision grâce aux protocoles enseignés.",
+    quote: "Rien à signaler, c'est toujours un plaisir d'avoir la peau douce en sortant !",
   },
   {
-    name: 'Laura D.',
-    role: 'Professionnelle beauté',
     quote:
-      "Une formatrice disponible, un groupe réduit, des démonstrations claires. Une vraie montée en gamme de ma pratique.",
+      "Elodie est formidable, très à l'écoute, douce et professionnelle. Je suis ravie de mon rehaussement de cils. Je reviendrai avec plaisir",
+  },
+  {
+    quote: 'très agréable je reviendrai',
+  },
+  {
+    quote: 'Top rien à dire ! Je reviens toujours avec plaisir ! :)',
+  },
+  {
+    quote:
+      "1ère visite chez Studio 7, très satisfaite ! ambiance détente et bon échange avec l'esthéticienne. Je reviendrais, et donc je vous recommande les filles !",
+  },
+  {
+    quote:
+      "Super expérience!! Je recommande je recommande ce salon dame très douce qui explique chaque geste et qui rassure (1h yeux fermés pas évident) mon rehaussement est génial cils recourbés en XL ! J’adore! merci à 2 mois",
+  },
+  {
+    quote: 'Bien je recommande',
+  },
+  {
+    quote:
+      "Je recommande Elodie, pour son professionnalisme, la passion que porte a son travail. J'ai fait le maquillage semi permanent et le résultat est magnifique. Elodie prend le temps de expliquer et conseiller, le résultat de son travail est genial est surtout reste naturel, tout ce que je voulais!",
+  },
+  {
+    quote:
+      "Merci encore à Élodie, Sa gentillesse et sa simplicité font d'elle un vrai bijoux!!! J'ai enfin trouvé quelqu’un qui me comprenne et prenne soin de moi je lui ai fait confiance et elle a fait de moi une nouvelle femme plus sure de soi et je me trouve enfin belle et jolie... merci merci merci",
+  },
+  {
+    quote:
+      "Elodie est vraiment une professionnelle qui aime son métier ! Elle s'applique minutieusement à réaliser ses prestations, et ce, à chaque fois que j'ai eu besoin de ses services. Ce qui est agréable c'est qu'elle prend le temps de s'occuper de moi, et qu'elle ne néglige jamais l'hygiène. C'est une jeune femme souriante qui en plus de vous rendre belle, vous fera passer un bon moment ! :)) Je recommande à 100% !",
   },
 ];
 ---
@@ -30,10 +52,6 @@ const testimonials = [
       {testimonials.map((item) => (
         <article class="rounded-2xl border border-gold/35 bg-[linear-gradient(165deg,_rgba(255,255,255,0.9),_rgba(247,244,238,0.78))] p-6 shadow-soft transition duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-lift">
           <p class="text-sm text-cocoa/80">“{item.quote}”</p>
-          <div class="mt-6">
-            <p class="text-sm font-semibold">{item.name}</p>
-            <p class="mobile-eyebrow text-xs uppercase text-gold">{item.role}</p>
-          </div>
         </article>
       ))}
     </div>
