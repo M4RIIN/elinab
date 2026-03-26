@@ -1,16 +1,27 @@
 ---
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import {
+  getAbsoluteUrl,
+  getBaseSchema,
+  getWebsiteSchema,
+  siteConfig,
+} from '../data/site';
 
 const base = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 const {
-  title = 'Elodie Mignot - Beauté, cosmétique et soins',
-  description = "Soins esthétiques sur-mesure et formations professionnelles à Saint-Orens-de-Gameville.",
-  keywords = 'esthétique, formations esthétique, beauté du regard, soin du visage, anti-âge, browlift, maquillage semi-permanent, dermopigmentation, micropigmentation, épilation, massage, formation maderotherapie, minceur, drainage brésilien, rehaussement de cils, Toulouse, Saint-Orens-de-Gameville',
-  image = `${base}logo.png`,
+  title = siteConfig.defaultTitle,
+  description = siteConfig.defaultDescription,
+  keywords = siteConfig.defaultKeywords.join(', '),
+  image = getAbsoluteUrl('/elodie-mignot-logo.png'),
+  schema = [],
+  noindex = false,
 } = Astro.props;
+
+const canonical = getAbsoluteUrl(Astro.url.pathname);
+const schemas = [getBaseSchema(), getWebsiteSchema(), ...schema];
 ---
 <!doctype html>
 <html lang="fr">
@@ -19,11 +30,19 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+    <link rel="canonical" href={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={siteConfig.siteName} />
+    <meta property="og:locale" content="fr_FR" />
     <meta property="og:image" content={image} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
     <meta name="theme-color" content="#101010" />
     <title>{title}</title>
 
@@ -33,10 +52,11 @@ const {
       href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700&family=Montserrat:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/png" href={`${base}logo.png`} />
-    <link rel="shortcut icon" href={`${base}logo.png`} />
-    <link rel="apple-touch-icon" href={`${base}logo.png`} />
+    <link rel="icon" type="image/png" href={`${base}elodie-mignot-logo.png`} />
+    <link rel="shortcut icon" href={`${base}elodie-mignot-logo.png`} />
+    <link rel="apple-touch-icon" href={`${base}elodie-mignot-logo.png`} />
     <meta name="google-site-verification" content="TlIcZHedScxK-j1KUdeG2S9giRXTtxiZRPnTurRak9U" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemas)} />
   </head>
   <body class="min-h-screen bg-[linear-gradient(160deg,_#fdfaf4_0%,_#f4ebdd_45%,_#faf6ee_100%)]">
     <Navbar />

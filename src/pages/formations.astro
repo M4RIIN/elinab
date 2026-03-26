@@ -3,31 +3,82 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionTitle from '../components/SectionTitle.astro';
 import FormationDetails from '../components/FormationDetails.astro';
 import CTASection from '../components/CTASection.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
 
-import formations from '../data/formations.json';
+import { formations } from '../data/catalog';
+import { getAbsoluteUrl, siteConfig } from '../data/site';
 
 const categoryOrder = ['Beauté du regard', 'Corps', 'Maquillage semi permanent', 'Soin du visage'];
 const formationsByCategory = categoryOrder.map((category) => ({
   category,
   items: formations.filter((formation) => formation.category === category)
 }));
+const formationFaqs = [
+  {
+    question: 'A qui s adressent les formations ?',
+    answer: 'Les formations sont ouvertes aux debutantes, aux professionnelles en perfectionnement et aux personnes en reconversion selon le module choisi.',
+  },
+  {
+    question: 'Les tarifs affiches sont-ils definitifs ?',
+    answer: 'Les prix indiques correspondent aux formats standards. Un devis peut etre propose pour un accompagnement personnalise ou un parcours combine.',
+  },
+  {
+    question: 'Ou ont lieu les formations ?',
+    answer: `Les sessions sont organisees a ${siteConfig.city}, avec intervention possible autour de Toulouse selon le projet.`,
+  },
+];
+const formationsSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: `Formations esthetiques a ${siteConfig.city}`,
+  itemListElement: formations.map((formation, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    url: getAbsoluteUrl(formation.path),
+    name: formation.name,
+  })),
+};
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: formationFaqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
 ---
 <BaseLayout
-  title="Formations — ELINA B FORMATION"
-  description="Des formations esthétiques complètes et certifiantes à Saint-Orens-de-Gameville, près de Toulouse."
-  keywords="formations esthétique, beauté du regard, soin du visage, anti-âge, browlift, maquillage semi-permanent, dermopigmentation, micropigmentation, épilation, massage, formation maderotherapie, minceur, drainage brésilien, rehaussement de cils, Toulouse, Saint-Orens-de-Gameville"
+  title={`Formations esthetiques a ${siteConfig.city} | ${siteConfig.brandName}`}
+  description={`Formations esthetiques a ${siteConfig.city}, pres de Toulouse : beaute du regard, soins du visage, massage, drainage bresilien et maquillage semi-permanent.`}
+  keywords="formations esthetiques saint-orens-de-gameville, formation browlift toulouse, formation drainage bresilien, formation maquillage semi-permanent"
+  schema={[formationsSchema, faqSchema]}
 >
   <section class="container-shell py-20">
     <SectionTitle
       eyebrow="Formations"
-      title="ELINA B FORMATION"
-      subtitle="Des formations complètes et certifiantes pour développer vos compétences et réussir dans le domaine de la beauté."
+      title="Formations esthetiques professionnelles"
+      subtitle={`Des formations proposees a ${siteConfig.city} pour developper vos competences, enrichir votre carte de soins et structurer votre activite.`}
     />
     <p class="mt-6 max-w-3xl text-sm text-cocoa/80">
-      Formations esthétique à Toulouse et environs : beauté du regard, soin du visage anti-âge, browlift,
-      rehaussement de cils, maquillage semi-permanent, dermopigmentation et micropigmentation, épilation, massage,
-      minceur, drainage brésilien et formation maderotherapie.
+      Chaque formation affiche une duree, un tarif et un lien direct. Les parcours standards sont proposes en presentiel
+      a {siteConfig.city}, avec possibilite de devis pour un accompagnement personnalise ou un perfectionnement cible.
     </p>
+    <div class="mt-8 grid gap-6 md:grid-cols-2">
+      <article class="rounded-2xl border border-gold/35 bg-white/80 p-6 shadow-soft">
+        <p class="mobile-eyebrow text-xs font-semibold uppercase text-gold">Expertise</p>
+        <h2 class="mt-3 font-display text-2xl">Approche terrain</h2>
+        <p class="mt-3 text-sm text-cocoa/80">Demonstration, pratique sur modele et conseils concrets pour exploiter la prestation apres la formation.</p>
+      </article>
+      <article class="rounded-2xl border border-gold/35 bg-white/80 p-6 shadow-soft">
+        <p class="mobile-eyebrow text-xs font-semibold uppercase text-gold">Zone</p>
+        <h2 class="mt-3 font-display text-2xl">Saint-Orens et Toulouse</h2>
+        <p class="mt-3 text-sm text-cocoa/80">Le site cible clairement la zone locale pour les demandes de formation autour de Toulouse.</p>
+      </article>
+    </div>
     <div class="mt-10 grid gap-12">
       {formationsByCategory.map((group) => (
         <div class="grid gap-6">
@@ -57,7 +108,7 @@ const formationsByCategory = categoryOrder.map((category) => ({
         </ul>
       </article>
       <article class="rounded-2xl border border-gold/35 bg-[linear-gradient(165deg,_rgba(255,255,255,0.9),_rgba(247,244,238,0.78))] p-6 shadow-soft">
-        <h3 class="font-display text-2xl">Public concerné</h3>
+        <h3 class="font-display text-2xl">Public concerne</h3>
         <ul class="mt-4 list-disc space-y-1 pl-5 text-sm text-cocoa/80">
           <li>Débutantes</li>
           <li>Professionnelles</li>
@@ -67,11 +118,17 @@ const formationsByCategory = categoryOrder.map((category) => ({
     </div>
   </section>
 
+  <FAQAccordion
+    faqs={formationFaqs}
+    title="FAQ formations"
+    subtitle="Informations utiles avant de demander un devis ou de reserver une date."
+  />
+
   <section class="container-shell py-20">
     <CTASection
-      title="Recevoir les informations de formation"
-      subtitle="Échangeons sur votre projet de perfectionnement ou de reconversion."
-      primaryLabel="Me contacter"
+      title="Recevoir un devis ou les prochaines disponibilites"
+      subtitle="Echangeons sur votre projet de perfectionnement, de reconversion ou sur la formation la plus adaptee."
+      primaryLabel="Demander un devis"
       primaryHref="/contact"
       secondaryLabel="Voir les prestations"
       secondaryHref="/prestations"

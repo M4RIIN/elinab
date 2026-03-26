@@ -3,25 +3,65 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionTitle from '../components/SectionTitle.astro';
 import PrestationsList from '../components/PrestationsList.astro';
 import CTASection from '../components/CTASection.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
 
-import prestations from '../data/prestations.json';
+import { prestations } from '../data/catalog';
+import { getAbsoluteUrl, siteConfig } from '../data/site';
 
 const categoryOrder = ['Beauté du regard', 'Soins du visage', 'Maquillage semi-permanent', 'Soins corps'];
 const prestationsByCategory = categoryOrder.map((category) => ({
   category,
   items: prestations.filter((prestation) => prestation.category === category)
 }));
+const prestationsFaqs = [
+  {
+    question: 'Les tarifs affiches correspondent-ils a la seance ?',
+    answer: 'Oui, les prix affiches sont presentes par prestation standard. Un protocole ou une cure sur-mesure peut faire l objet d un devis.',
+  },
+  {
+    question: 'Dans quelle zone intervenez-vous ?',
+    answer: `Le site s adresse principalement aux clientes de ${siteConfig.city}, Toulouse et des communes voisines.`,
+  },
+  {
+    question: 'Comment reserver une prestation ?',
+    answer: 'Vous pouvez utiliser la page contact pour demander un rendez-vous, poser une question ou obtenir une orientation vers le soin adapte.',
+  },
+];
+const prestationsSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: `Prestations esthetiques a ${siteConfig.city}`,
+  itemListElement: prestations.map((prestation, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    url: getAbsoluteUrl(prestation.path),
+    name: prestation.name,
+  })),
+};
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: prestationsFaqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
 ---
 <BaseLayout
-  title="Prestations — Elodie Mignot"
-  description="Prestations esthétiques sur-mesure à Saint-Orens-de-Gameville près de Toulouse : visage, regard, dermopigmentation, soins corps."
-  keywords="esthétique, beauté du regard, soin du visage, anti-âge, browlift, maquillage semi-permanent, dermopigmentation, micropigmentation, épilation, massage, minceur, drainage brésilien, rehaussement de cils, Toulouse, Saint-Orens-de-Gameville"
+  title={`Prestations esthetiques a ${siteConfig.city} | ${siteConfig.brandName}`}
+  description={`Prestations esthetiques a ${siteConfig.city}, pres de Toulouse : beaute du regard, soins du visage, maquillage semi-permanent et soins corps sur-mesure.`}
+  keywords="prestations esthetiques saint-orens-de-gameville, rehaussement de cils toulouse, browlift saint-orens, drainage bresilien toulouse"
+  schema={[prestationsSchema, faqSchema]}
 >
   <section class="container-shell py-20">
     <SectionTitle
       eyebrow="Prestations"
-      title="Des soins signatures pour chaque besoin"
-      subtitle="Des prestations personnalisées, réalisées avec précision et exigence."
+      title="Prestations esthetiques sur-mesure"
+      subtitle={`Des soins proposes a ${siteConfig.city}, penses pour des besoins reels, avec tarifs visibles, zone desservie et contact direct.`}
     />
     <div class="mobile-eyebrow mt-6 flex flex-wrap gap-3 text-xs uppercase text-cocoa/70">
       {categoryOrder.map((category) => (
@@ -29,10 +69,21 @@ const prestationsByCategory = categoryOrder.map((category) => ({
       ))}
     </div>
     <p class="mt-6 max-w-3xl text-sm text-cocoa/80">
-      Prestations d'esthétique à Toulouse et alentours : beauté du regard, soin du visage anti-âge, browlift,
-      rehaussement de cils, maquillage semi-permanent, dermopigmentation et micropigmentation, épilation, massage,
-      minceur et drainage brésilien.
+      Chaque prestation comprend un intitulé clair, un tarif et un descriptif utile. Cela renforce la lisibilite
+      pour Google et aide les clientes a identifier rapidement le soin qui correspond a leur besoin.
     </p>
+    <div class="mt-8 grid gap-6 md:grid-cols-2">
+      <article class="rounded-2xl border border-gold/35 bg-white/80 p-6 shadow-soft">
+        <p class="mobile-eyebrow text-xs font-semibold uppercase text-gold">Expertise</p>
+        <h2 class="mt-3 font-display text-2xl">Savoir-faire confirme</h2>
+        <p class="mt-3 text-sm text-cocoa/80">Experience, protocoles personnalises et recherche d un rendu propre, durable et naturel.</p>
+      </article>
+      <article class="rounded-2xl border border-gold/35 bg-white/80 p-6 shadow-soft">
+        <p class="mobile-eyebrow text-xs font-semibold uppercase text-gold">Zone</p>
+        <h2 class="mt-3 font-display text-2xl">Clientele locale</h2>
+        <p class="mt-3 text-sm text-cocoa/80">Positionnement local sur {siteConfig.city}, Toulouse et les communes voisines pour capter la recherche de proximite.</p>
+      </article>
+    </div>
     <div class="mt-10 grid gap-12">
       {prestationsByCategory.map((group) => (
         <div class="grid gap-6">
@@ -46,10 +97,16 @@ const prestationsByCategory = categoryOrder.map((category) => ({
     </div>
   </section>
 
+  <FAQAccordion
+    faqs={prestationsFaqs}
+    title="FAQ prestations"
+    subtitle="Reponses rapides sur les tarifs, la zone desservie et la prise de rendez-vous."
+  />
+
   <section class="container-shell py-20">
     <CTASection
-      title="Réserver votre soin"
-      subtitle="Contactez-moi pour planifier votre prestation ou créer un protocole sur-mesure."
+      title="Reserver votre soin ou demander un avis"
+      subtitle="Contactez-moi pour planifier votre prestation, valider le bon protocole ou demander un devis pour une cure."
       primaryLabel="Prendre rendez-vous"
       primaryHref="/contact"
       secondaryLabel="Voir les formations"

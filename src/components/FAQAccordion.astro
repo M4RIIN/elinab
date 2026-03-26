@@ -1,5 +1,5 @@
 ---
-const faqs = [
+const defaultFaqs = [
   {
     question: 'Comment réserver une prestation ?',
     answer:
@@ -16,15 +16,18 @@ const faqs = [
       "Je travaille avec des gammes professionnelles hautement tolérées, sélectionnées pour leur efficacité et leur sensorialité.",
   },
 ];
+const {
+  faqs = defaultFaqs,
+  title = 'Questions fréquentes',
+  subtitle = 'Je réponds aux demandes les plus courantes. Pour toute question spécifique, contactez-moi directement.',
+} = Astro.props;
 ---
 <section class="container-shell py-20">
   <div class="grid gap-10 lg:grid-cols-[0.4fr_0.6fr]">
     <div class="space-y-4">
       <span class="mobile-eyebrow text-xs font-semibold uppercase text-gold">FAQ</span>
-      <h2 class="font-display text-2xl sm:text-4xl">Questions fréquentes</h2>
-      <p class="text-sm text-cocoa/80">
-        Je réponds aux demandes les plus courantes. Pour toute question spécifique, contactez-moi directement.
-      </p>
+      <h2 class="font-display text-2xl sm:text-4xl">{title}</h2>
+      <p class="text-sm text-cocoa/80">{subtitle}</p>
     </div>
     <div class="space-y-4">
       {faqs.map((faq, index) => (

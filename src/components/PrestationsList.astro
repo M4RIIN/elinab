@@ -3,7 +3,7 @@ const { items = [] } = Astro.props;
 ---
 <div class="grid gap-6 md:grid-cols-2">
   {items.map((item) => (
-    <article class="rounded-2xl border border-gold/35 bg-[linear-gradient(165deg,_rgba(255,255,255,0.9),_rgba(247,244,238,0.78))] p-6 shadow-soft transition duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-lift">
+    <article id={item.id} class="rounded-2xl scroll-mt-28 border border-gold/35 bg-[linear-gradient(165deg,_rgba(255,255,255,0.9),_rgba(247,244,238,0.78))] p-6 shadow-soft transition duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-lift">
       {(item.duration || item.price) && (
         <div class="mobile-eyebrow flex flex-wrap items-center justify-between gap-2 text-xs uppercase text-cocoa/75">
           <span>{item.duration}</span>
@@ -21,6 +21,11 @@ const { items = [] } = Astro.props;
             <p>{paragraph}</p>
           ))}
         </div>
+      )}
+      {item.path && (
+        <a href={item.path} class="mt-5 inline-flex text-xs font-semibold uppercase tracking-[0.14em] text-gold hover:text-ink">
+          Lien direct vers cette prestation
+        </a>
       )}
     </article>
   ))}
