@@ -1,4 +1,4 @@
-export const DEFAULT_SITE_URL = 'https://m4riin.github.io/elinab';
+export const DEFAULT_SITE_URL = 'https://www.elinabesthetique.fr';
 
 export const siteConfig = {
   brandName: 'Elodie Mignot',
